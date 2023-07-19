@@ -1,0 +1,13 @@
+.button-perfil{
+    width: 50%;
+    height: 26%;
+    background-image: url(/images/Edit\ Button.png);
+    background-color: transparent;
+    background-size: 100% 100%;
+    margin: 50% auto auto 0;
+    border: none;
+}
+
+.button-perfil:hover{
+    opacity: 50%;
+}

@@ -1,0 +1,7 @@
+.profile{
+display: grid;
+grid-template-columns: 12% 30% 5% 53%;
+;
+margin: 5% 0;
+
+}
