@@ -22,13 +22,18 @@
             <button type="button" class="button-perfil"></button>
             <button type="button" class="button-lugar"></button>
           </section>
-          <!--
-          <form class="profile__container">
-            <fieldset class="profile__imput profile__imput_ctrl_texts">
-              <input type="text" class="profile__nombre profile__nombre_el_heading">
-              <input type="text" class="profile___acerca profile___acerca_el_subheading">
-            </fieldset>
-          </form> -->
+          
+          <div class="popup popup_opened">
+            <form class="popup__container">
+              <h1 class="popup__title">Editar perfil</h1>
+              <input type="text" class="popup__datos" placeholder="Nombre" color="#c4c4c4">
+              <input type="text" class="popup__datos" placeholder="Acerca de mi">
+              <button type="submit" class="popup__button">Guardar</button>
+              <button type="buttom" class="popup__close">
+                <img src="/images/Close Icon.png" alt="close">
+              </button>
+            </form>
+        </div> 
         </main>
     </div>
 </body>

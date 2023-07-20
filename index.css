@@ -11,4 +11,9 @@
 @import url(./blocks/profile/__acerca/profile__acerca.css);
 @import url(./blocks/button-perfil/button-perfil.css);
 @import url(./blocks/button-lugar/button-lugar.css);
-
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/popup/__container/popup__container.css);
+@import url(./blocks/popup/title/popup__title.css);
+@import url(./blocks/popup/__datos/popup__datos.css);
+@import url(./blocks/popup/__button/popup__button.css);
+@import url(./blocks/popup/__close/popup__close.css);

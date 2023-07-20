@@ -1,0 +1,12 @@
+.popup__datos{
+    font-family: "Inter400", Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 121%;
+    color: black;
+    width: 80%;
+    margin: 5% auto;
+    border: none;
+    border-bottom: solid 1px #c4c4c4;
+    
+
+}
