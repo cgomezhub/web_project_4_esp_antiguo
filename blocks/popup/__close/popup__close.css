@@ -6,3 +6,6 @@
     border: none;
     cursor: pointer;
 }
+.popup__close:hover{
+    opacity: 70%;
+}

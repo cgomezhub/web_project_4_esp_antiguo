@@ -3,6 +3,7 @@
 @import url(./blocks/page/page.css);
 @import url(./fonts/inter.css);
 @import url(./blocks/header/header.css);
+@import url(./blocks/container/container.css);
 @import url(./blocks/logo/logo.css);
 @import url(./blocks/line/line.css);
 @import url(./blocks/profile/profile.css);
@@ -17,3 +18,5 @@
 @import url(./blocks/popup/__datos/popup__datos.css);
 @import url(./blocks/popup/__button/popup__button.css);
 @import url(./blocks/popup/__close/popup__close.css);
+@import url(./blocks/elements/elements.css);
+@import url(./blocks/elements/__celda/elements__celda.css);
