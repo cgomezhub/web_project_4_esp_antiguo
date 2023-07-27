@@ -1,0 +1,15 @@
+.element__title{
+    font-family: "Inter900";
+    font-size: 24px;
+    line-height: 121%;
+    color: black;
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 10% 20% 10% 5%;
+    margin: 0;
+    text-overflow: ellipsis ;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}

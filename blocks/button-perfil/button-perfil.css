@@ -6,8 +6,10 @@
     background-size: 100% 100%;
     margin: 70%  auto auto 0;
     border: none;
+    cursor: pointer;
 }
 
 .button-perfil:hover{
     opacity: 50%;
+
 }

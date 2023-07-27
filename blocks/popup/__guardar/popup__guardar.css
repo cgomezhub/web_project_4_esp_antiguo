@@ -1,4 +1,4 @@
-.popup__button{
+.popup__guardar{
     width: 80%;
     background-color: black;
     color: white;
@@ -12,6 +12,6 @@
 
 }
 
-.popup__button:hover{
+.popup__guardar:hover{
     opacity: 70%;
 }
