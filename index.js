@@ -25,17 +25,14 @@ function handleProfileFormSubmit(evt) {
 
     nameDisplay.textContent = nameValue;
     jobDisplay.textContent = jobValue;
-
-   
 }
 
-// se observará el evento de entrega
-formElement.addEventListener('submit', handleProfileFormSubmit); 
+formElement.addEventListener('submit', handleProfileFormSubmit);
 
-let guardarBtn = document.querySelector(".popup__guardar");
-guardarBtn.addEventListener ('click', () => { 
-     let nombre = document.querySelector(".profile__nombre").value;
-     let acercaDeMi = document.querySelector(".profile__acerca").value;
-     
- });
+
+let heartImage = document.querySelector(".element__heart");
+
+heartImage.addEventListener("click", function() {
+ if (heartImage.src.includes("images/heart.svg")){heartImage.src = "images/Black-heart.png";} else {heartImage.src = "images/heart.svg"; } });
+
 

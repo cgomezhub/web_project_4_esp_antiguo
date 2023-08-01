@@ -1,12 +1,13 @@
 .element__heart{
     position: absolute;
-    top: 86%;
+    top: 87%;
     right: 5%;
-    background: none;
     border: none;
     cursor: pointer;
-    }
+}
 
-    .element__heart:hover{
+.element__heart:hover{
         opacity: 70%;
 }
+
+
