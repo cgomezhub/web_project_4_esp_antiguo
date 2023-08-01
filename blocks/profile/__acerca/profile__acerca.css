@@ -10,6 +10,10 @@
     .profile__acerca{
         font-size: 22px;
     }
-    
+}
 
+@media screen and (max-width: 320px){
+    .profile__acerca{
+        font-size: 30px;
+    }
 }
