@@ -3,8 +3,7 @@
     height: 40%;
     background-image: url(/images/Add-Button.svg);
     background-color: transparent;
-    -moz-border-image: auto;
-    -webkit-border-image: auto;
+    border-image: fill;
     background-size: 100% 100%;
     margin: auto 0 auto auto;
     border: none;
