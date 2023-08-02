@@ -1,9 +1,8 @@
 .button-lugar{
     width: 50%;
     height: 40%;
-    background-image: url(/images/Add-Button.svg);
+    background-image: url(/images/Add-Button.png);
     background-color: transparent;
-    border-image: fill;
     background-size: 100% 100%;
     margin: auto 0 auto auto;
     border: none;
