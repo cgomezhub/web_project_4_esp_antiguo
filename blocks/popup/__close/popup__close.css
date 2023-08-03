@@ -1,9 +1,16 @@
 .popup__close{
     position: absolute;
-    top: -10%;
-    right: -10%;
+    top: -8%;
+    right: 0;
+    width: 0.5%;
+    height: 0.5%;
+    background-image: url(/images/Close-Icon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
     background: none;
-    border: none;
+    border:none;
     cursor: pointer;
 }
 .popup__close:hover{

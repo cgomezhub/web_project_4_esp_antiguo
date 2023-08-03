@@ -1,12 +1,16 @@
 .button-lugar{
     width: 50%;
     height: 40%;
-    background-image: url(/images/Add-Button.png);
+    background-image: url(/images/add-button+.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     background-color: transparent;
-    background-size: 100% 100%;
+    border:none;
     margin: auto 0 auto auto;
-    border: none;
+    outline: none;
     cursor: pointer;
+    
 }
 .button-lugar:hover{
     opacity: 50%;
