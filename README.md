@@ -53,7 +53,6 @@ A la hora de trabajar, debes optar por exportar las imágenes directamente desde
 
 ¡Esperamos que te diviertas con JavaScript!
 
-
 **Enlace web - Github page**
 
 https://cgomezhub.github.io/web_project_4_esp/
