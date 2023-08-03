@@ -1,9 +1,15 @@
 .popup-add__close{
     position: absolute;
-    top: -10%;
-    right: -10%;
-    background: none;
-    border: none;
+    top: -9%;
+    right: -9%;
+    width: 10%;
+    height: 10%;
+    background-image: url(/images/Close-Icon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border:none;
     cursor: pointer;
 }
 .popup-add__close:hover{
