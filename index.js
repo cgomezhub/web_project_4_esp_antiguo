@@ -37,8 +37,11 @@ heartImage.forEach((boton) =>{
     boton.addEventListener("click", () => {
          if (boton.src.includes("images/heart.svg")){
             boton.src = "images/Black-heart.png";
-            } 
-        else {boton.src = "images/heart.svg"; } });});
+        } 
+        else {boton.src = "images/heart.svg"; 
+        }    
+    });
+});
 
 let btnAdd = document.querySelector(".button-lugar");
 let ventaModal = document.querySelector(".popup-add");
