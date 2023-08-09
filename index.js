@@ -13,7 +13,9 @@ editButton.addEventListener('click', function() {
     jobInput.value = job.textContent;
     popup.style.display = 'block';
 });
-closeButton.addEventListener('click', function() { popup.style.display = 'none';}); 
+closeButton.addEventListener('click', function() {
+     popup.style.display = 'none';
+}); 
 
 let formElement = document.querySelector(".popup__container");
 function handleProfileFormSubmit(evt) {
@@ -30,13 +32,13 @@ function handleProfileFormSubmit(evt) {
 }
 formElement.addEventListener('submit', handleProfileFormSubmit);
 
-
-
-
 let heartImage = document.querySelectorAll(".element__heart");
-heartImage.forEach((boton) =>{boton.addEventListener("click", () => {
- if (boton.src.includes("images/heart.svg")){boton.src = "images/Black-heart.png";} 
- else {boton.src = "images/heart.svg"; } });});
+heartImage.forEach((boton) =>{
+    boton.addEventListener("click", () => {
+         if (boton.src.includes("images/heart.svg")){
+            boton.src = "images/Black-heart.png";
+            } 
+        else {boton.src = "images/heart.svg"; } });});
 
 let btnAdd = document.querySelector(".button-lugar");
 let ventaModal = document.querySelector(".popup-add");
