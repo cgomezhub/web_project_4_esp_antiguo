@@ -1,12 +1,12 @@
 
-let editButton = document.querySelector(".button-perfil");
-let popup = document.querySelector(".popup");
-let closeButton = document.querySelector(".popup__close");
-let saveButton = document.querySelector(".popup__guardar");
-let nameInput = document.querySelector(".popup__name");
-let jobInput = document.querySelector(".popup__acerca");
-let nombre = document.querySelector(".profile__nombre");
-let job = document.querySelector(".profile__acerca");
+const editButton = document.querySelector(".button-perfil");
+const popup = document.querySelector(".popup");
+const closeButton = document.querySelector(".popup__close");
+const saveButton = document.querySelector(".popup__guardar");
+const nameInput = document.querySelector(".popup__name");
+const jobInput = document.querySelector(".popup__acerca");
+const nombre = document.querySelector(".profile__nombre");
+const job = document.querySelector(".profile__acerca");
 
 editButton.addEventListener('click', function() {
     nameInput.value = nombre.textContent;
@@ -16,6 +16,10 @@ editButton.addEventListener('click', function() {
 closeButton.addEventListener('click', function() {
      popup.style.display = 'none';
 }); 
+saveButton.addEventListener('click', function() {
+  popup.style.display = 'none';
+}); 
+
 
 let formElement = document.querySelector(".popup__container");
 function handleProfileFormSubmit(evt) {
@@ -24,33 +28,12 @@ function handleProfileFormSubmit(evt) {
     let jobDisplay = document.querySelector(".profile__acerca");
     let nameInput = document.querySelector(".popup__name");
     let jobInput = document.querySelector(".popup__acerca");
-    let nameValue = nameInput.value; 
+    let nameValue = nameInput.value;
     let jobValue = jobInput.value; 
     nameDisplay.textContent = nameValue;
     jobDisplay.textContent = jobValue; 
 }
 formElement.addEventListener('submit', handleProfileFormSubmit);
-
-let heartImage = document.querySelectorAll(".element__heart");
-heartImage.forEach((boton) =>{
-    boton.addEventListener("click", () => {
-         if (boton.src.includes("images/heart.svg")){
-            boton.src = "images/Black-heart.png";
-        } 
-        else {boton.src = "images/heart.svg"; 
-        }    
-    });
-});
-
-let btnAdd = document.querySelector(".button-lugar");
-let ventaModal = document.querySelector(".popup-add");
-let btnClose = document.querySelector(".popup-add__close");
-btnAdd.addEventListener('click', () => { 
-    ventaModal.style.display = 'block'; 
-});
-btnClose.addEventListener('click', () => {
-     ventaModal.style.display = 'none';
-});
 
 const contenedorGrid = document.querySelector(".elements");
 const elementos = [
@@ -90,8 +73,8 @@ const elementos = [
       corazon: "./images/heart.svg",
       eliminar:"./images/Trash.svg"
     }
-  ];
-  elementos.forEach(elemento => {
+];
+elementos.forEach(elemento => {
     const divElemento = document.createElement('div');
     divElemento.classList.add("element");
 
@@ -111,11 +94,64 @@ const elementos = [
     eliminarElemento.src = elemento.eliminar;
     eliminarElemento.classList.add("element__trash");
 
+
     divElemento.appendChild(imagenElemento);
     divElemento.appendChild(nombreElemento);
     divElemento.appendChild(corazonElemento);
     divElemento.appendChild(eliminarElemento);
 
     contenedorGrid.appendChild(divElemento);
-  });
+});
+
+const btnAdd = document.querySelector(".button-lugar");
+const ventaModal = document.querySelector(".popup-add");
+const btnClose = document.querySelector(".popup-add__close");
+const crearButton = document.querySelector(".popup-add__crear");
+const lugarInput = document.querySelector(".popup-add__lugar");
+const httpsInput = document.querySelector(".popup-add__https");
+
+btnAdd.addEventListener('click', () => { 
+    ventaModal.style.display = 'block'; 
+});
+btnClose.addEventListener('click', () => {
+     ventaModal.style.display = 'none';
+});
+crearButton.addEventListener('click', function() {
+  ventaModal.style.display = 'none';
+}); 
+
+
+let formLugar = document.querySelector(".popup-add__container");
+function handleLugarFormSubmit(evt) {
+    evt.preventDefault();
+    const lugarDisplay = document.querySelector(".element__title");
+    const httpsDisplay = document.querySelector(".element__image");
+    const lugarValue = lugarInput.value; 
+    const httpsValue = httpsInput.value;
+    lugarDisplay.textContent = lugarValue;
+    httpsDisplay.src = httpsValue;
+};
+formLugar.addEventListener('submit', handleLugarFormSubmit);
+
+
+let closeTarjeta = document.querySelector(".element__trash");
+let elementTarjeta = document.querySelector(".element");
+
+elementos.forEach( function() {
+closeTarjeta.addEventListener("click", () =>{
+    elementTarjeta.style.display = "none";
+});
+});
+
+
+let heartImage = document.querySelectorAll(".element__heart");
+heartImage.forEach((boton) =>{
+    boton.addEventListener("click", () => {
+         if (boton.src.includes("images/heart.svg")){
+            boton.src = "images/Black-heart.png";
+        } 
+        else {boton.src = "images/heart.svg"; 
+        }    
+    });
+});
   
