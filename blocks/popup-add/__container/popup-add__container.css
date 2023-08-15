@@ -1,7 +1,7 @@
 .popup-add__container{
     position: absolute;
     top: 30%;
-    left: 50%;
+    left: 35%;
     transform: translate(-50%, -50%);   
     width: 50%;
     background-color: white;
@@ -9,3 +9,17 @@
     display: flex;
     flex-direction: column;
    }
+
+   @media screen and (min-width: 320px) and (max-width: 768px){
+    .popup-add__container{
+        width: 80%;
+        transform: translate(-35%, -80%); 
+    }
+}
+
+@media screen and (max-width: 320px){
+    .popup-add__container{
+        width: 80%;
+        transform: translate(-35%, -80%);   
+    }
+}

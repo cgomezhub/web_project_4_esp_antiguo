@@ -8,3 +8,16 @@
     border: none;
     border-bottom: solid 1px #c4c4c4;
 }
+
+
+
+@media screen and (min-width: 320px) and (max-width: 768px){
+    .popup__name{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .popup__name{
+        font-size: 40px;
+    }

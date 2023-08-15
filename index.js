@@ -8,13 +8,14 @@ const jobInput = document.querySelector(".popup__acerca");
 const nombre = document.querySelector(".profile__nombre");
 const job = document.querySelector(".profile__acerca");
 
+
 editButton.addEventListener('click', function() {
     nameInput.value = nombre.textContent;
     jobInput.value = job.textContent;
-    popup.style.display = 'block';
+    popup.classList.add("active");
 });
 closeButton.addEventListener('click', function() {
-     popup.style.display = 'none';
+  popup.classList.remove("active");
 }); 
 saveButton.addEventListener('click', function() {
   popup.style.display = 'none';
@@ -121,20 +122,20 @@ elementos.forEach(elemento => {
 });
 
 const btnAdd = document.querySelector(".button-lugar");
-const ventaModal = document.querySelector(".popup-add");
+const popupAdd = document.querySelector(".popup-add");
 const btnClose = document.querySelector(".popup-add__close");
 const crearButton = document.querySelector(".popup-add__crear");
 const lugarInput = document.querySelector(".popup-add__lugar");
 const httpsInput = document.querySelector(".popup-add__https");
 
 btnAdd.addEventListener('click', () => { 
-    ventaModal.style.display = 'block'; 
+    popupAdd.classList.add("active"); 
 });
 btnClose.addEventListener('click', () => {
-     ventaModal.style.display = 'none';
+     popupAdd.classList.remove('active');
 });
 crearButton.addEventListener('click', function() {
-  ventaModal.style.display = 'none';
+  popupAdd.style.display = 'none';
 }); 
 
 function like(boton) {
