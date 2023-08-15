@@ -94,7 +94,9 @@ elementos.forEach(elemento => {
     eliminarElemento.src = elemento.eliminar;
     eliminarElemento.classList.add("element__trash");
 
-
+    eliminarElemento.addEventListener("click", () =>{
+      divElemento.style.display = "none";
+  });
     divElemento.appendChild(imagenElemento);
     divElemento.appendChild(nombreElemento);
     divElemento.appendChild(corazonElemento);
@@ -120,38 +122,37 @@ crearButton.addEventListener('click', function() {
   ventaModal.style.display = 'none';
 }); 
 
+function like(boton) {
+  if (boton.src.includes('images/heart.svg')) {
+    boton.src = 'images/Black-heart.png';
+  } else {
+    boton.src = 'images/heart.svg';
+  }
+}
 
 let formLugar = document.querySelector(".popup-add__container");
+
 function handleLugarFormSubmit(evt) {
-    evt.preventDefault();
-    const lugarDisplay = document.querySelector(".element__title");
-    const httpsDisplay = document.querySelector(".element__image");
-    const lugarValue = lugarInput.value; 
-    const httpsValue = httpsInput.value;
-    lugarDisplay.textContent = lugarValue;
-    httpsDisplay.src = httpsValue;
+  evt.preventDefault();
+  const element=document.querySelector(".element").cloneNode(true); 
+  const lugarDisplay = element.querySelector(".element__title");
+  const httpsDisplay = element.querySelector(".element__image");
+  const elementTrash = element.querySelector(".element__trash");
+  const lugarValue = lugarInput.value; 
+  const httpsValue = httpsInput.value;
+  lugarDisplay.textContent = lugarValue;
+  httpsDisplay.src = httpsValue;
+  const elementHeart=element.querySelector(".element__heart");
+  elementHeart.addEventListener("click",()=>like(elementHeart))
+  contenedorGrid.prepend(element);
+  elementTrash.addEventListener("click", () => {
+    element.style.display = "none";
+  });
 };
 formLugar.addEventListener('submit', handleLugarFormSubmit);
 
-
-let closeTarjeta = document.querySelector(".element__trash");
-let elementTarjeta = document.querySelector(".element");
-
-elementos.forEach( function() {
-closeTarjeta.addEventListener("click", () =>{
-    elementTarjeta.style.display = "none";
-});
-});
-
-
 let heartImage = document.querySelectorAll(".element__heart");
 heartImage.forEach((boton) =>{
-    boton.addEventListener("click", () => {
-         if (boton.src.includes("images/heart.svg")){
-            boton.src = "images/Black-heart.png";
-        } 
-        else {boton.src = "images/heart.svg"; 
-        }    
-    });
-});
+    boton.addEventListener("click", () => like(boton))
+});   
   
