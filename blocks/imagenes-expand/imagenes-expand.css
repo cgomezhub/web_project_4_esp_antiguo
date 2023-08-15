@@ -2,6 +2,6 @@
     width: 100%;
     position:static;
     background-color: rgb(19, 16, 16);
-    display: block;
+    display: none;
     z-index: 1;
 }

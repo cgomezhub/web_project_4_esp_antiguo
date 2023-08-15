@@ -82,6 +82,21 @@ elementos.forEach(elemento => {
     imagenElemento.src = elemento.imagen;
     imagenElemento.classList.add("element__image");
 
+    const imagenesExpand = document.querySelector(".imagenes-expand");
+    const imagenesExpandImage = document.querySelector(".imagenes-expand__image");
+    const imagenesExpandTitle = document.querySelector(".imagenes-expand__title");
+    const imagenesExpandClose = document.querySelector('.imagenes-expand__close');
+    
+    imagenElemento.addEventListener("click", () => {
+      imagenesExpand.style.display = "block";
+      imagenesExpandImage.src = elemento.imagen;
+      imagenesExpandTitle.textContent = elemento.nombre;
+    });
+    
+    imagenesExpandClose.addEventListener("click", () =>{
+      imagenesExpand.style.display = "none";
+    } );
+    
     const nombreElemento = document.createElement('h2'); 
     nombreElemento.textContent = elemento.nombre;
     nombreElemento.classList.add("element__title");
@@ -138,16 +153,35 @@ function handleLugarFormSubmit(evt) {
   const lugarDisplay = element.querySelector(".element__title");
   const httpsDisplay = element.querySelector(".element__image");
   const elementTrash = element.querySelector(".element__trash");
+  const elementHeart=element.querySelector(".element__heart");
+  const imagenesExpand = document.querySelector(".imagenes-expand");
+  const imagenesExpandImage = document.querySelector(".imagenes-expand__image");
+  const imagenesExpandTitle = document.querySelector(".imagenes-expand__title");
+  const imagenesExpandClose = document.querySelector('.imagenes-expand__close');
   const lugarValue = lugarInput.value; 
   const httpsValue = httpsInput.value;
+
   lugarDisplay.textContent = lugarValue;
   httpsDisplay.src = httpsValue;
-  const elementHeart=element.querySelector(".element__heart");
-  elementHeart.addEventListener("click",()=>like(elementHeart))
-  contenedorGrid.prepend(element);
+
+  elementHeart.addEventListener("click",()=>like(elementHeart));
   elementTrash.addEventListener("click", () => {
     element.style.display = "none";
   });
+  httpsDisplay.addEventListener("click", () => {
+    imagenesExpand.style.display = "block";
+    imagenesExpandImage.src = httpsValue;
+    imagenesExpandTitle.textContent = lugarValue;
+  });
+  
+  imagenesExpandClose.addEventListener("click", () =>{
+    imagenesExpand.style.display = "none";
+  } );
+  httpsDisplay.addEventListener("click", () => {
+    imagenesExpand.style.display = "block";
+  });
+  contenedorGrid.prepend(element);
+  
 };
 formLugar.addEventListener('submit', handleLugarFormSubmit);
 
