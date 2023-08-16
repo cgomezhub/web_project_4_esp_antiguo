@@ -10,7 +10,7 @@
 
 # Autor #
 
-    Carlos Gomez
+    Carlos Gómez
     'cgomezhub'
     cgomezlugo@hotmail.com
     058 416 953 4983
