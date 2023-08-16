@@ -1,6 +1,6 @@
 .elements{
     display: grid;
-    margin: 10% auto ;
+    margin: 10% auto;
     grid-template-columns: repeat(3, 33.33%);
     grid-template-rows: 1fr 1fr;
     grid-gap: 1.5% 1.5%;
