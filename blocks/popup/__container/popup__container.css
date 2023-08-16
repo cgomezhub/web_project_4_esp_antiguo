@@ -1,15 +1,9 @@
 .popup__container{
-    position: absolute;
-    width: 30%;
-    top: 20%;
-    left: 20%;
-    transform: translate(-50%, -50%);  
+    width: 75%;
     background-color: white;
     border-radius: 3%;
     display: flex;
     flex-direction: column;
-   
-
 }
 
 @media screen and (min-width: 320px) and (max-width: 768px){
