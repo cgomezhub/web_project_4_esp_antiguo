@@ -15,10 +15,13 @@ editButton.addEventListener('click', function() {
     popup.classList.add("active");
 });
 closeButton.addEventListener('click', function() {
-  popup.classList.remove("active");
+  popup.classList.remove('active');
+  
+  
 }); 
 saveButton.addEventListener('click', function() {
-  popup.style.display = 'none';
+  popup.classList.remove('active');
+  
 }); 
 
 

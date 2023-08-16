@@ -5,9 +5,17 @@
     top: 0%;
     padding-left: 15%;
     background-color: rgb(0, 0, 0, 0.6);
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
     z-index: 1;
 }
 .popup-add.active{
-    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup-add.inactive{
+    visibility: hidden;
+    opacity: 0;
 }

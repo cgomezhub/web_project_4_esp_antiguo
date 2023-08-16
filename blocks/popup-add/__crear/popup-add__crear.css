@@ -21,7 +21,9 @@
     }
 }
 
+
 @media screen and (max-width: 320px){
     .popup-add__crear{
         font-size: 50px;
     }
+}

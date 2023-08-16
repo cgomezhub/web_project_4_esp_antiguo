@@ -5,12 +5,16 @@
     top: -12%;
     padding-right: 2%;
     background-color: rgba(0, 0, 0, 0.90);
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
     z-index: 0;
 }
 
 .imagenes-expand.active{
     display: block;
+    visibility: visible;
+     opacity: 1;
 }
 
 
