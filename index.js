@@ -87,17 +87,17 @@ elementos.forEach(elemento => {
     const imagenesExpandImage = document.querySelector(".imagenes-expand__image");
     const imagenesExpandTitle = document.querySelector(".imagenes-expand__title");
     const imagenesExpandClose = document.querySelector('.imagenes-expand__close');
-    
+  
     imagenElemento.addEventListener("click", () => {
-      imagenesExpand.style.display = "block";
-      imagenesExpandImage.src = elemento.imagen;
-      imagenesExpandTitle.textContent = elemento.nombre;
-    });
-    
-    imagenesExpandClose.addEventListener("click", () =>{
-      imagenesExpand.style.display = "none";
-    } );
-    
+    imagenesExpand.classList.add("active");
+    imagenesExpandImage.src = elemento.imagen;
+    imagenesExpandTitle.textContent = elemento.nombre;
+  });
+  
+  imagenesExpandClose.addEventListener("click", () =>{
+    imagenesExpand.classList.remove("active");
+  } );
+
     const nombreElemento = document.createElement('h2'); 
     nombreElemento.textContent = elemento.nombre;
     nombreElemento.classList.add("element__title");
@@ -122,20 +122,20 @@ elementos.forEach(elemento => {
 });
 
 const btnAdd = document.querySelector(".button-lugar");
-const popupAdd = document.querySelector(".popup-add");
+const vetanaModal = document.querySelector(".popup-add");
 const btnClose = document.querySelector(".popup-add__close");
 const crearButton = document.querySelector(".popup-add__crear");
 const lugarInput = document.querySelector(".popup-add__lugar");
 const httpsInput = document.querySelector(".popup-add__https");
 
 btnAdd.addEventListener('click', () => { 
-    popupAdd.classList.add("active"); 
+  vetanaModal.classList.add("active"); 
 });
 btnClose.addEventListener('click', () => {
-     popupAdd.classList.remove('active');
+  vetanaModal.classList.remove('active');
 });
-crearButton.addEventListener('click', function() {
-  popupAdd.style.display = 'none';
+crearButton.addEventListener('click', () => {
+  vetanaModal.classList.remove("active");
 }); 
 
 function like(boton) {
@@ -155,32 +155,35 @@ function handleLugarFormSubmit(evt) {
   const httpsDisplay = element.querySelector(".element__image");
   const elementTrash = element.querySelector(".element__trash");
   const elementHeart=element.querySelector(".element__heart");
-  const imagenesExpand = document.querySelector(".imagenes-expand");
-  const imagenesExpandImage = document.querySelector(".imagenes-expand__image");
-  const imagenesExpandTitle = document.querySelector(".imagenes-expand__title");
-  const imagenesExpandClose = document.querySelector('.imagenes-expand__close');
   const lugarValue = lugarInput.value; 
   const httpsValue = httpsInput.value;
 
   lugarDisplay.textContent = lugarValue;
   httpsDisplay.src = httpsValue;
 
+  
   elementHeart.addEventListener("click",()=>like(elementHeart));
+  
   elementTrash.addEventListener("click", () => {
     element.style.display = "none";
   });
+  
+  const imagenesExpand = document.querySelector(".imagenes-expand");
+  const imagenesExpandImage = document.querySelector(".imagenes-expand__image");
+  const imagenesExpandTitle = document.querySelector(".imagenes-expand__title");
+  const imagenesExpandClose = document.querySelector('.imagenes-expand__close');
+  
   httpsDisplay.addEventListener("click", () => {
-    imagenesExpand.style.display = "block";
+    imagenesExpand.classList.add("active");
     imagenesExpandImage.src = httpsValue;
     imagenesExpandTitle.textContent = lugarValue;
   });
   
   imagenesExpandClose.addEventListener("click", () =>{
-    imagenesExpand.style.display = "none";
+    imagenesExpand.classList.remove("active");
   } );
-  httpsDisplay.addEventListener("click", () => {
-    imagenesExpand.style.display = "block";
-  });
+
+
   contenedorGrid.prepend(element);
   
 };
@@ -191,3 +194,17 @@ heartImage.forEach((boton) =>{
     boton.addEventListener("click", () => like(boton))
 });   
   
+/*const imagenesExpand = document.querySelector(".imagenes-expand");
+const imagenesExpandImage = document.querySelector(".imagenes-expand__image");
+const imagenesExpandTitle = document.querySelector(".imagenes-expand__title");
+const imagenesExpandClose = document.querySelector('.imagenes-expand__close');
+
+imagenElemento.addEventListener("click", () => {
+  imagenesExpand.classList.add("active");
+  imagenesExpandImage.src = elemento.imagen;
+  imagenesExpandTitle.textContent = elemento.nombre;
+});
+
+imagenesExpandClose.addEventListener("click", () =>{
+  imagenesExpand.classList.remove("active");
+} );*/

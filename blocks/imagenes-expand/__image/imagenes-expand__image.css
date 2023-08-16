@@ -1,5 +1,6 @@
 .imagenes-expand__image{   
-    max-width: 75vw;
-    max-height: 75vh;
-    
+   width: 75%;
+   height: 75%;
+   margin: auto;   
 }
+
