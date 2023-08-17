@@ -1,4 +1,4 @@
-.imagenes-expand{
+.images-expand{
     width: 100%;
     height: 112%;
     position:absolute;
@@ -11,18 +11,11 @@
     z-index: 0;
 }
 
-.imagenes-expand.active{
+.images-expand.active{
     visibility: visible;
      opacity: 1;
 }
 
-/*
-@media screen and (min-width: 320px) and (max-width: 768px){
-    .imagenes-expand.active{
-        display: none;
-    }
-}
-*/
 
 @media screen and (max-width: 320px){
     .imagenes-expand.active{

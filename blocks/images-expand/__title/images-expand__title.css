@@ -1,4 +1,4 @@
-.imagenes-expand__title{
+.images-expand__title{
     font-family: "Inter600";
     font-size: 25px;
     line-height: 121%;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 768px){
-    .imagenes-expand__title{
+    .images-expand__title{
         width: 200%;
         font-size: 40px;
         margin-left: 0;
