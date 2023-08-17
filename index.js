@@ -3,40 +3,32 @@ const editButton = document.querySelector(".button-perfil");
 const popup = document.querySelector(".popup");
 const closeButton = document.querySelector(".popup__close");
 const saveButton = document.querySelector(".popup__guardar");
-const nameInput = document.querySelector(".popup__name");
-const jobInput = document.querySelector(".popup__acerca");
-const nombre = document.querySelector(".profile__nombre");
-const job = document.querySelector(".profile__acerca");
+let nameInput = document.querySelector(".popup__name");
+let jobInput = document.querySelector(".popup__acerca");
+let nombre = document.querySelector(".profile__nombre");
+let job = document.querySelector(".profile__acerca");
 
 
-editButton.addEventListener('click', function() {
+editButton.addEventListener('click', () =>{
     nameInput.value = nombre.textContent;
     jobInput.value = job.textContent;
     popup.classList.add("active");
 });
-closeButton.addEventListener('click', function() {
+closeButton.addEventListener('click', () => {
   popup.classList.remove('active');
-  
-  
 }); 
-saveButton.addEventListener('click', function() {
+saveButton.addEventListener('click', () =>{
   popup.classList.remove('active');
   
 }); 
 
-
-let formElement = document.querySelector(".popup__container");
+const formElement = document.querySelector(".popup__container");
 function handleProfileFormSubmit(evt) {
-    evt.preventDefault();
-    let nameDisplay = document.querySelector(".profile__nombre"); 
-    let jobDisplay = document.querySelector(".profile__acerca");
-    let nameInput = document.querySelector(".popup__name");
-    let jobInput = document.querySelector(".popup__acerca");
-    let nameValue = nameInput.value;
-    let jobValue = jobInput.value; 
-    nameDisplay.textContent = nameValue;
-    jobDisplay.textContent = jobValue; 
+    evt.preventDefault();    
+    nombre.textContent = nameInput.value;
+    job.textContent = jobInput.value; 
 }
+
 formElement.addEventListener('submit', handleProfileFormSubmit);
 
 const contenedorGrid = document.querySelector(".elements");
@@ -86,20 +78,20 @@ elementos.forEach(elemento => {
     imagenElemento.src = elemento.imagen;
     imagenElemento.classList.add("element__image");
 
-    const imagenesExpand = document.querySelector(".imagenes-expand");
-    const imagenesExpandImage = document.querySelector(".imagenes-expand__image");
-    const imagenesExpandTitle = document.querySelector(".imagenes-expand__title");
-    const imagenesExpandClose = document.querySelector('.imagenes-expand__close');
+    const imagesExpand = document.querySelector(".images-expand");
+    const imagesExpandImage = document.querySelector(".images-expand__image");
+    const imagesExpandTitle = document.querySelector(".images-expand__title");
+    const imagesExpandClose = document.querySelector('.images-expand__close');
   
     imagenElemento.addEventListener("click", () => {
-    imagenesExpand.classList.add("active");
-    imagenesExpandImage.src = elemento.imagen;
-    imagenesExpandTitle.textContent = elemento.nombre;
-  });
+    imagesExpand.classList.add("active");
+    imagesExpandImage.src = elemento.imagen;
+    imagesExpandTitle.textContent = elemento.nombre;
+    });
   
-  imagenesExpandClose.addEventListener("click", () =>{
-    imagenesExpand.classList.remove("active");
-  } );
+    imagesExpandClose.addEventListener("click", () =>{
+    imagesExpand.classList.remove("active");
+   } );
 
     const nombreElemento = document.createElement('h2'); 
     nombreElemento.textContent = elemento.nombre;
@@ -115,7 +107,8 @@ elementos.forEach(elemento => {
 
     eliminarElemento.addEventListener("click", () =>{
       divElemento.style.display = "none";
-  });
+    });
+
     divElemento.appendChild(imagenElemento);
     divElemento.appendChild(nombreElemento);
     divElemento.appendChild(corazonElemento);
@@ -123,6 +116,14 @@ elementos.forEach(elemento => {
 
     contenedorGrid.appendChild(divElemento);
 });
+
+function like(boton) {
+  if (boton.src.includes('images/heart.svg')) {
+    boton.src = 'images/Black-heart.png';
+  } else {
+    boton.src = 'images/heart.svg';
+  }
+}
 
 const btnAdd = document.querySelector(".button-lugar");
 const vetanaModal = document.querySelector(".popup-add");
@@ -141,14 +142,6 @@ crearButton.addEventListener('click', () => {
   vetanaModal.classList.remove("active");
 }); 
 
-function like(boton) {
-  if (boton.src.includes('images/heart.svg')) {
-    boton.src = 'images/Black-heart.png';
-  } else {
-    boton.src = 'images/heart.svg';
-  }
-}
-
 let formLugar = document.querySelector(".popup-add__container");
 
 function handleLugarFormSubmit(evt) {
@@ -158,32 +151,29 @@ function handleLugarFormSubmit(evt) {
   const httpsDisplay = element.querySelector(".element__image");
   const elementTrash = element.querySelector(".element__trash");
   const elementHeart=element.querySelector(".element__heart");
-  const lugarValue = lugarInput.value; 
-  const httpsValue = httpsInput.value;
-
-  lugarDisplay.textContent = lugarValue;
-  httpsDisplay.src = httpsValue;
-
   
+  lugarDisplay.textContent = lugarInput.value;
+  httpsDisplay.src = httpsInput.value;
+
   elementHeart.addEventListener("click",()=>like(elementHeart));
   
   elementTrash.addEventListener("click", () => {
     element.style.display = "none";
   });
   
-  const imagenesExpand = document.querySelector(".imagenes-expand");
-  const imagenesExpandImage = document.querySelector(".imagenes-expand__image");
-  const imagenesExpandTitle = document.querySelector(".imagenes-expand__title");
-  const imagenesExpandClose = document.querySelector('.imagenes-expand__close');
+  const imagesExpand = document.querySelector(".images-expand");
+  const imagesExpandImage = document.querySelector(".images-expand__image");
+  const imagesExpandTitle = document.querySelector(".images-expand__title");
+  const imagesExpandClose = document.querySelector('.images-expand__close');
   
   httpsDisplay.addEventListener("click", () => {
-    imagenesExpand.classList.add("active");
-    imagenesExpandImage.src = httpsValue;
-    imagenesExpandTitle.textContent = lugarValue;
+    imagesExpand.classList.add("active");
+    imagesExpandImage.src = httpsValue;
+    imagesExpandTitle.textContent = lugarValue;
   });
   
-  imagenesExpandClose.addEventListener("click", () =>{
-    imagenesExpand.classList.remove("active");
+  imagesExpandClose.addEventListener("click", () =>{
+    imagesExpand.classList.remove("active");
   } );
 
 
@@ -195,19 +185,4 @@ formLugar.addEventListener('submit', handleLugarFormSubmit);
 let heartImage = document.querySelectorAll(".element__heart");
 heartImage.forEach((boton) =>{
     boton.addEventListener("click", () => like(boton))
-});   
-  
-/*const imagenesExpand = document.querySelector(".imagenes-expand");
-const imagenesExpandImage = document.querySelector(".imagenes-expand__image");
-const imagenesExpandTitle = document.querySelector(".imagenes-expand__title");
-const imagenesExpandClose = document.querySelector('.imagenes-expand__close');
-
-imagenElemento.addEventListener("click", () => {
-  imagenesExpand.classList.add("active");
-  imagenesExpandImage.src = elemento.imagen;
-  imagenesExpandTitle.textContent = elemento.nombre;
 });
-
-imagenesExpandClose.addEventListener("click", () =>{
-  imagenesExpand.classList.remove("active");
-} );*/
