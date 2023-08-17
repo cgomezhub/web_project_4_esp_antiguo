@@ -1,11 +1,14 @@
 .imagenes-expand__image{   
    margin-left: 0;
    width: 75%;
+   height: 75%;
+   background-size:contain;
 }
 
 @media screen and (min-width: 320px) and (max-width: 768px){
    .imagenes-expand__image{
        width: 200%;
+       height: 200%;
    }
 }
 
