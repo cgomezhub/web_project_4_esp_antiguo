@@ -1,18 +1,17 @@
-.button-perfil{
-    width: 55%;
-    height: 20%;
-    background-image: url(../../images/Edit-Button.png);
+.button-place{
+    width: 50%;
+    height: 40%;
+    background-image: url(../../images/add-button+.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
     border:none;
+    margin: auto 0 auto auto;
     outline: none;
     cursor: pointer;
-    margin: 70% 0 auto auto;
     
 }
-
-.button-perfil:hover{
+.button-place:hover{
     opacity: 50%;
 }

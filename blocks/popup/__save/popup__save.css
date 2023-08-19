@@ -1,4 +1,4 @@
-.popup__guardar{
+.popup__save{
     width: 80%;
     background-color: black;
     color: white;
@@ -12,19 +12,19 @@
 
 }
 
-.popup__guardar:hover{
+.popup__save:hover{
     opacity: 70%;
 }
 
 
 @media screen and (min-width: 320px) and (max-width: 768px){
-    .popup__guardar{
+    .popup__save{
         font-size: 50px;
     }
 }
 
 @media screen and (max-width: 320px){
-    .popup__guardar{
+    .popup__save{
         font-size: 50px;
     }
 }
