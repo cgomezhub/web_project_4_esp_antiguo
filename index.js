@@ -31,7 +31,7 @@ function handleProfileFormSubmit(evt) {
 
 popupContainer.addEventListener('submit', handleProfileFormSubmit);
 
-const elements = document.querySelector(".elements");
+let elements = document.querySelector(".elements");
 const elementos = [
     {
       imagen: "https://images.unsplash.com/photo-1666831268439-376e34c4de0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
@@ -63,6 +63,7 @@ const elementos = [
       corazon: "./images/heart.svg",
       eliminar:"./images/Trash.svg"
     },
+
     {
       imagen: "https://images.unsplash.com/photo-1643252494989-81cd0b5bead2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
       nombre: "Gran Canon",      
@@ -70,6 +71,13 @@ const elementos = [
       eliminar:"./images/Trash.svg"
     }
 ];
+
+let imagesExpand = document.querySelector(".images-expand");
+let imagesExpandImage = document.querySelector(".images-expand__image");
+let imagesExpandTitle = document.querySelector(".images-expand__title");
+let imagesExpandClose = document.querySelector('.images-expand__close');
+
+
 elementos.forEach(elemento => {
     const div = document.createElement('div');
     div.classList.add("element");
@@ -77,21 +85,6 @@ elementos.forEach(elemento => {
     const img = document.createElement('img'); 
     img.src = elemento.imagen;
     img.classList.add("element__image");
-
-    const imagesExpand = document.querySelector(".images-expand");
-    const imagesExpandImage = document.querySelector(".images-expand__image");
-    const imagesExpandTitle = document.querySelector(".images-expand__title");
-    const imagesExpandClose = document.querySelector('.images-expand__close');
-  
-    img.addEventListener("click", () => {
-    imagesExpand.classList.add("active");
-    imagesExpandImage.src = elemento.imagen;
-    imagesExpandTitle.textContent = elemento.nombre;
-    });
-  
-    imagesExpandClose.addEventListener("click", () =>{
-    imagesExpand.classList.remove("active");
-   } );
 
     const h2 = document.createElement('h2'); 
     h2.textContent = elemento.nombre;
@@ -105,16 +98,26 @@ elementos.forEach(elemento => {
     imgRemove.src = elemento.eliminar;
     imgRemove.classList.add("element__trash");
 
-    imgRemove.addEventListener("click", () =>{
-      div.style.display = "none";
-    });
-
     div.appendChild(img);
     div.appendChild(h2);
     div.appendChild(imgHeart);
     div.appendChild(imgRemove);
 
     elements.appendChild(div);
+
+    imgRemove.addEventListener("click", () =>{
+      div.style.display = "none";
+    });
+  
+    img.addEventListener("click", () => {
+      imagesExpand.classList.add("active");
+      imagesExpandImage.src = elemento.imagen;
+      imagesExpandTitle.textContent = elemento.nombre;
+    });
+  
+    imagesExpandClose.addEventListener("click", () =>{
+      imagesExpand.classList.remove("active");
+    } );
 });
 
 function like(boton) {
@@ -124,6 +127,11 @@ function like(boton) {
     boton.src = 'images/heart.svg';
   }
 }
+
+let heartImage = document.querySelectorAll(".element__heart");
+heartImage.forEach((boton) =>{
+    boton.addEventListener("click", () => like(boton))
+})
 
 const buttonPlace = document.querySelector(".button-place");
 const popupAdd = document.querySelector(".popup-add");
@@ -157,16 +165,11 @@ function handleLugarFormSubmit(evt) {
 
   elementHeart.addEventListener("click",()=>like(elementHeart));
   
-  elementTrash.addEventListener("click", () => {
+  elementTrash.addEventListener("click", () =>{
     element.style.display = "none";
   });
   
-  const imagesExpand = document.querySelector(".images-expand");
-  const imagesExpandImage = document.querySelector(".images-expand__image");
-  const imagesExpandTitle = document.querySelector(".images-expand__title");
-  const imagesExpandClose = document.querySelector('.images-expand__close');
-  
-  elementImage.addEventListener("click", () => {
+  elementImage.addEventListener("click", () =>{
     imagesExpand.classList.add("active");
     imagesExpandImage.src = popupAddHttps.value;
     imagesExpandTitle.textContent = popupAddPlace.value;
@@ -176,14 +179,10 @@ function handleLugarFormSubmit(evt) {
     imagesExpand.classList.remove("active");
   } );
 
-
   elements.prepend(element);
-  
 };
+
 
 popupAddContainer.addEventListener('submit', handleLugarFormSubmit);
 
-let heartImage = document.querySelectorAll(".element__heart");
-heartImage.forEach((boton) =>{
-    boton.addEventListener("click", () => like(boton))
-});
+
