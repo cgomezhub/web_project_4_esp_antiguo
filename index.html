@@ -1,61 +1,83 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
     <title>Around the US</title>
-    <link rel="icon" href="/images/avion-favicon.ico">
-</head>
-<body>
+    <link rel="icon" href="/images/avion-favicon.ico" />
+  </head>
+  <body>
     <div class="page">
-        <header class="header">
-          <img src="./images/logo__araund-theUS.svg" alt="logo around the US" class="logo">
-          <div class="line"></div>
-        </header>
-        <main class="container">
-          <section class="profile">
-            <img src="./images/Avatar__jack.png" alt="avatar de jacques cousteau" class="profile__image">
-            <ul class="profile__place">
-              <li class="profile__name">Jacques Cousteau</li>
-              <li class="profile__about">Explorador</li>
-            </ul>
-            <button type="button" class="button-edit"></button>
-            <button type="button" class="button-place"></button>
-          </section>          
-          <section class="popup">
-            <form class="popup__container">
-              <button type="button" class="popup__close"></button>
-              <h1 class="popup__title">Editar perfil</h1>
-              <input type="text" class="popup__name" placeholder="Nombre">
-              <input type="text" class="popup__about" placeholder="Acerca de mi">
-              <button type="submit" class="popup__save">Guardar</button>
-            </form>
-          </section>
-          <section class="popup-add">
+      <header class="header">
+        <img
+          src="./images/logo__araund-theUS.svg"
+          alt="logo around the US"
+          class="logo"
+        />
+        <div class="line"></div>
+      </header>
+      <main class="container">
+        <section class="profile">
+          <img
+            src="./images/Avatar__jack.png"
+            alt="avatar de jacques cousteau"
+            class="profile__image"
+          />
+          <ul class="profile__place">
+            <li class="profile__name">Jacques Cousteau</li>
+            <li class="profile__about">Explorador</li>
+          </ul>
+          <button type="button" class="button-edit"></button>
+          <button type="button" class="button-place"></button>
+        </section>
+        <section class="popup">
+          <form class="popup__container">
+            <button type="button" class="popup__close"></button>
+            <h1 class="popup__title">Editar perfil</h1>
+            <input type="text" class="popup__name" placeholder="Nombre" />
+            <input
+              type="text"
+              class="popup__about"
+              placeholder="Acerca de mi"
+            />
+            <button type="submit" class="popup__save">Guardar</button>
+          </form>
+        </section>
+        <section class="popup-add">
           <form class="popup-add__container">
             <button type="button" class="popup-add__close"></button>
             <h2 class="popup-add__title">Nuevo lugar</h2>
-            <input type="text" class="popup-add__place" placeholder="Nombre del lugar">
-            <input type="text" class="popup-add__https" placeholder="Enlace a la imagen">
+            <input
+              type="text"
+              class="popup-add__place"
+              placeholder="Nombre del lugar"
+            />
+            <input
+              type="text"
+              class="popup-add__https"
+              placeholder="Enlace a la imagen"
+            />
             <button type="submit" class="popup-add__create">Crear</button>
           </form>
-          </section>
-          <section class="elements">
-          </section>
-          <section class = "images-expand">
-            <div class="images-expand__container">
-              <button type="button" class="images-expand__close"></button>
-              <img class="images-expand__image" src="https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg" alt="US National Park">
-              <p class="images-expand__title"></p>
-            </div>
-          </section>
-          
-        </main>
-        <footer class="footer">
-            <p class="footer__copyright">© 2023. Carlos Gomez</p>
-          </footer>
+        </section>
+        <section class="elements"></section>
+        <section class="images-expand">
+          <div class="images-expand__container">
+            <button type="button" class="images-expand__close"></button>
+            <img
+              class="images-expand__image"
+              src="https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg"
+              alt="US National Park"
+            />
+            <p class="images-expand__title"></p>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__copyright">© 2023. Carlos Gomez</p>
+      </footer>
     </div>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
