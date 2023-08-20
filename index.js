@@ -31,6 +31,28 @@ function handleProfileFormSubmit(evt) {
 
 popupContainer.addEventListener('submit', handleProfileFormSubmit);
 
+const buttonPlace = document.querySelector(".button-place");
+const popupAdd = document.querySelector(".popup-add");
+const popupAddClose = document.querySelector(".popup-add__close");
+const popupAddCreate = document.querySelector(".popup-add__create");
+const popupAddPlace = document.querySelector(".popup-add__place");
+const popupAddHttps = document.querySelector(".popup-add__https");
+
+buttonPlace.addEventListener('click', () => { 
+  popupAdd.classList.add("active"); 
+});
+popupAddClose.addEventListener('click', () => {
+  popupAdd.classList.remove('active');
+});
+popupAddCreate.addEventListener('click', () => {
+  popupAdd.classList.remove("active");
+});
+
+let imagesExpand = document.querySelector(".images-expand");
+let imagesExpandImage = document.querySelector(".images-expand__image");
+let imagesExpandTitle = document.querySelector(".images-expand__title");
+let imagesExpandClose = document.querySelector('.images-expand__close');
+
 let elements = document.querySelector(".elements");
 const elementos = [
     {
@@ -71,11 +93,6 @@ const elementos = [
       eliminar:"./images/Trash.svg"
     }
 ];
-
-let imagesExpand = document.querySelector(".images-expand");
-let imagesExpandImage = document.querySelector(".images-expand__image");
-let imagesExpandTitle = document.querySelector(".images-expand__title");
-let imagesExpandClose = document.querySelector('.images-expand__close');
 
 
 elementos.forEach(elemento => {
@@ -133,22 +150,6 @@ heartImage.forEach((boton) =>{
     boton.addEventListener("click", () => like(boton))
 })
 
-const buttonPlace = document.querySelector(".button-place");
-const popupAdd = document.querySelector(".popup-add");
-const popupAddClose = document.querySelector(".popup-add__close");
-const popupAddCreate = document.querySelector(".popup-add__create");
-const popupAddPlace = document.querySelector(".popup-add__place");
-const popupAddHttps = document.querySelector(".popup-add__https");
-
-buttonPlace.addEventListener('click', () => { 
-  popupAdd.classList.add("active"); 
-});
-popupAddClose.addEventListener('click', () => {
-  popupAdd.classList.remove('active');
-});
-popupAddCreate.addEventListener('click', () => {
-  popupAdd.classList.remove("active");
-}); 
 
 let popupAddContainer = document.querySelector(".popup-add__container");
 
