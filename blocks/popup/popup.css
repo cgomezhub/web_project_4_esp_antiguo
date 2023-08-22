@@ -1,5 +1,5 @@
 .popup{
-    width: 100%;
+    width: 85%;
     height: 100%;
     position: absolute;
     top: 0%;
@@ -9,6 +9,7 @@
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
     z-index: 1;
+    margin-right: 0;
 }
 .popup.active{
  visibility: visible;
