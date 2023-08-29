@@ -29,9 +29,8 @@ popupProfileForm.addEventListener('submit', handleProfileFormSubmit);
 const buttonPlace = document.querySelector('.button-place');
 const popupAdd = document.querySelector('.popup-add');
 const popupAddClose = document.querySelector('.popup-add__close');
-const popupAddCreate = document.querySelector('.popup-add__create');
-const popupAddPlace = document.querySelector('.popup-add__place');
-const popupAddHttps = document.querySelector('.popup-add__https');
+const popupAddInputPlace = document.querySelector('.popup-add__input-place');
+const popupAddInputHttps = document.querySelector('.popup-add__input-https');
 
 buttonPlace.addEventListener('click', () => {
   popupAdd.classList.add('active');
@@ -39,9 +38,7 @@ buttonPlace.addEventListener('click', () => {
 popupAddClose.addEventListener('click', () => {
   popupAdd.classList.remove('active');
 });
-popupAddCreate.addEventListener('click', () => {
-  popupAdd.classList.remove('active');
-});
+
 
 let imagesExpand = document.querySelector('.images-expand');
 let imagesExpandImage = document.querySelector('.images-expand__image');
@@ -150,7 +147,7 @@ heartImage.forEach((boton) => {
   boton.addEventListener('click', () => like(boton));
 });
 
-let popupAddContainer = document.querySelector('.popup-add__container');
+const popupAddForm = document.querySelector('.popup-add__form');
 
 function handleLugarFormSubmit(evt) {
   evt.preventDefault();
@@ -160,8 +157,8 @@ function handleLugarFormSubmit(evt) {
   const elementTrash = element.querySelector('.element__trash');
   const elementHeart = element.querySelector('.element__heart');
 
-  elementTitle.textContent = popupAddPlace.value;
-  elementImage.src = popupAddHttps.value;
+  elementTitle.textContent = popupAddInputPlace.value;
+  elementImage.src = popupAddInputHttps.value;
 
   elementHeart.addEventListener('click', () => like(elementHeart));
 
@@ -171,15 +168,17 @@ function handleLugarFormSubmit(evt) {
 
   elementImage.addEventListener('click', () => {
     imagesExpand.classList.add('active');
-    imagesExpandImage.src = popupAddHttps.value;
-    imagesExpandTitle.textContent = popupAddPlace.value;
+    imagesExpandImage.src = popupAddInputHttps.value;
+    imagesExpandTitle.textContent = popupAddInputPlace.value;
   });
 
   imagesExpandClose.addEventListener('click', () => {
     imagesExpand.classList.remove('active');
   });
 
+  popupAdd.classList.remove('active');
+
   elements.prepend(element);
 }
 
-popupAddContainer.addEventListener('submit', handleLugarFormSubmit);
+popupAddForm.addEventListener('submit', handleLugarFormSubmit);

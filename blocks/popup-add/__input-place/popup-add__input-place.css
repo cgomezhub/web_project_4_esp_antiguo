@@ -1,4 +1,4 @@
-.popup-add__https{
+.popup-add__input-place{
     font-family: "Inter400", Helvetica, sans-serif;
     font-size: 20px;
     line-height: 121%;
@@ -10,13 +10,13 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 768px){
-    .popup-add__https{
+    .popup-add__input-place{
         font-size: 40px;
     }
 }
 
 @media screen and (max-width: 320px){
-    .popup-add__https{
+    .popup-add__input-place{
         font-size: 40px;
     }
 }
