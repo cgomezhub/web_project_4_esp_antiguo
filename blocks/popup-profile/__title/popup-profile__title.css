@@ -1,4 +1,4 @@
-.popup__title{
+.popup-profile__title{
     font-family: "Inter900", Helvetica, sans-serif;
     font-size: 40px;
     line-height: 121%;
@@ -10,13 +10,13 @@
 
 
 @media screen and (min-width: 320px) and (max-width: 768px){
-    .popup__title{
+    .popup-profile__title{
         font-size: 50px;
     }
 }
 
 @media screen and (max-width: 320px){
-    .popup__title{
+    .popup-profile__title{
         font-size: 50px;
     }
 }

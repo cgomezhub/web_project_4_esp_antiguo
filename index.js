@@ -1,33 +1,30 @@
-const editButton = document.querySelector('.button-edit');
-const popup = document.querySelector('.popup');
-const popupClose = document.querySelector('.popup__close');
-const popupSave = document.querySelector('.popup__save');
-const popupName = document.querySelector('.popup__name');
-const popupAbout = document.querySelector('.popup__about');
+const buttonEdit = document.querySelector('.button-edit');
+const popupProfile = document.querySelector('.popup-profile');
+const popupProfileClose = document.querySelector('.popup-profile__close');
+const popupProfileInputName = document.querySelector('.popup-profile__input-name');
+const popupProfileInputAbout = document.querySelector('.popup-profile__input-about');
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__about');
 
-editButton.addEventListener('click', () => {
-  popupName.value = profileName.textContent;
-  popupAbout.value = profileAbout.textContent;
-  popup.classList.add('active');
+buttonEdit.addEventListener('click', () => {
+  popupProfile.classList.add('active');
+  popupProfileInputName.value = profileName.textContent;
+  popupProfileInputAbout.value = profileAbout.textContent;
 });
-popupClose.addEventListener('click', () => {
-  popup.classList.remove('active');
-});
-popupSave.addEventListener('click', () => {
-  popup.classList.remove('active');
+popupProfileClose.addEventListener('click', () => {
+  popupProfile.classList.remove('active');
 });
 
-const popupContainer = document.querySelector('.popup__container');
+const popupProfileForm = document.querySelector('.popup-profile__form');
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
-  profileName.textContent = popupName.value;
-  profileAbout.textContent = popupAbout.value;
+  profileName.textContent = popupProfileInputName.value;
+  profileAbout.textContent = popupProfileInputAbout.value;
+  popupProfile.classList.remove('active');
 }
 
-popupContainer.addEventListener('submit', handleProfileFormSubmit);
+popupProfileForm.addEventListener('submit', handleProfileFormSubmit);
 
 const buttonPlace = document.querySelector('.button-place');
 const popupAdd = document.querySelector('.popup-add');

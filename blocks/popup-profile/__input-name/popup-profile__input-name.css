@@ -1,4 +1,4 @@
-.popup__about{
+.popup-profile__input-name{
     font-family: "Inter400", Helvetica, sans-serif;
     font-size: 20px;
     line-height: 121%;
@@ -10,14 +10,15 @@
 }
 
 
+
 @media screen and (min-width: 320px) and (max-width: 768px){
-    .popup__about{
+    .popup-profile__input-name{
         font-size: 40px;
     }
 }
 
 @media screen and (max-width: 320px){
-    .popup__about{
+    .popup-profile__input-name{
         font-size: 40px;
     }
 }
