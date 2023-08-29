@@ -13,8 +13,9 @@ margin: 5% 0;
 
 @media screen and (max-width: 320px){
     .profile{
+        width: 90%;
         font-size: 22px;
-        margin: 5% 5% 5% 0;
+        margin: 5% 0 5% 2%;
         grid-template-columns: 17% 53% 5% 25%;
     }
 }

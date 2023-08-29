@@ -3,7 +3,7 @@
     height: 112%;
     position:absolute;
     top: -12%;
-    padding-right: 2%;
+    /*padding-right: 2%;*/
     background-color: rgba(0, 0, 0, 0.90);
     visibility: hidden;
     opacity: 0;
@@ -19,7 +19,7 @@
 
 @media screen and (max-width: 320px){
     .imagenes-expand.active{
-        visibility: hidden;
+        /*visibility: hidden;*/
         display: none;
     }
 }

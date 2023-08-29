@@ -52,11 +52,13 @@
               type="text"
               class="popup-add__place"
               placeholder="Nombre del lugar"
+              minlength="2"
+              maxlength="6"
             />
             <input
-              type="text"
+              type="url"
               class="popup-add__https"
-              placeholder="Enlace a la imagen"
+              placeholder="Enlace o link (https//... o http...)"
             />
             <button type="submit" class="popup-add__create">Crear</button>
           </form>
@@ -79,5 +81,6 @@
       </footer>
     </div>
     <script src="index.js"></script>
+    <script src="validate.js"></script>
   </body>
 </html>

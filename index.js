@@ -20,6 +20,7 @@ popupSave.addEventListener('click', () => {
 });
 
 const popupContainer = document.querySelector('.popup__container');
+
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = popupName.value;
