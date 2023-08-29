@@ -32,14 +32,23 @@
           <button type="button" class="button-place"></button>
         </section>
         <section class="popup-profile">
-          <form class="popup-profile__form">
+          <form class="popup-profile__form" novalidate>
             <button type="button" class="popup-profile__close"></button>
             <h1 class="popup-profile__title">Editar perfil</h1>
-            <input type="text" class="popup-profile__input-name" placeholder="Nombre"/>
+            <input 
+              type="text"
+              class="popup-profile__input-name" 
+              placeholder="Nombre"
+              minlength="2"
+              maxlength="40"
+              required/>
             <input
               type="text"
               class="popup-profile__input-about"
               placeholder="Acerca de mi"
+              minlength="2"
+              maxlength="200"
+              required
             />
             <button type="submit" class="popup-profile__button">Guardar</button>
           </form>
@@ -81,6 +90,6 @@
       </footer>
     </div>
     <script src="index.js"></script>
-    <!--<script src="validate.js"></script> -->
+    <script src="validate.js"></script>
   </body>
 </html>
