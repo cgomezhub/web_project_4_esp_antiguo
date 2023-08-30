@@ -9,14 +9,20 @@
     border-bottom: solid 1px #c4c4c4;
 }
 
-
+/*
 .popup-profile__input-name:invalid {
     border-bottom: 1px solid red;
 }
 
 .popup-profile__input-name:valid {
     border-bottom: 1px solid green;
-}
+}*/
+
+
+
+
+
+
 
 @media screen and (min-width: 320px) and (max-width: 768px){
     .popup-profile__input-name{

@@ -36,13 +36,17 @@
             <button type="button" class="popup-profile__close"></button>
             <h1 class="popup-profile__title">Editar perfil</h1>
             <input 
+              id="text-input-name"
+              class="popup-profile__input-name"
               type="text"
-              class="popup-profile__input-name" 
               placeholder="Nombre"
               minlength="2"
               maxlength="40"
-              required/>
+              required
+            />
+            <span class="popup-profile__input-name-error text-input-name-error"></span>
             <input
+              id="text-input-about"
               type="text"
               class="popup-profile__input-about"
               placeholder="Acerca de mi"
@@ -50,6 +54,7 @@
               maxlength="200"
               required
             />
+            <span class="text-input-about-error popup-add__input-about-error"></span>
             <button type="submit" class="popup-profile__button">Guardar</button>
           </form>
         </section>
