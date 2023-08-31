@@ -1,0 +1,9 @@
+.profile-form__error-name{
+    visibility: visible;
+}
+
+
+.profile-form__error-name_active{
+    visibility: visible;
+}
+

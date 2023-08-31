@@ -1,4 +1,4 @@
-.popup-profile__input-about{
+.profile-form__input-about{
     font-family: "Inter400", Helvetica, sans-serif;
     font-size: 20px;
     line-height: 121%;
@@ -9,23 +9,23 @@
     border-bottom: solid 1px #c4c4c4;
 }
 
-.popup-profile__input-about:invalid {
+.profile-form__input-about:invalid {
     border-bottom: 1px solid red;
 }
 
-.popup-profile__input-about:valid {
+.profile-form__input-about:valid {
     border-bottom: 1px solid green;
 }
 
 
 @media screen and (min-width: 320px) and (max-width: 768px){
-    .popup-profile__input-about{
+    .profile-form__input-about{
         font-size: 40px;
     }
 }
 
 @media screen and (max-width: 320px){
-    .popup-profile__input-about{
+    .profile-form__input-about{
         font-size: 40px;
     }
 }

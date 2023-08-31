@@ -1,4 +1,4 @@
-.popup-profile__close{
+.profile-form__close{
     position: absolute;
     top: -5%;
     right: -5%;
@@ -13,6 +13,6 @@
     cursor: pointer;
 
 }
-.popup-profile__close:hover{
+.profile-form__close:hover{
     opacity: 70%;
 }

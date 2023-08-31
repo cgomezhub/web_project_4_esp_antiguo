@@ -12,27 +12,26 @@
 
 const formSelector = document.querySelector('.popup-profile__form');
 const inputSelector = formSelector.querySelector('.popup-profile__input-name');
-//const inputErrorClass = formSelector.querySelector(`.${inputSelector.id}-error`);
+const errorClass = formSelector.querySelector(`.${inputSelector.id}-error`);
 
 // Escribe el código de la primera función, que muestra el elemento erróneo
 const showError = (input)/*, errorMessage)*/ => {
   input.classList.add('popup-profile__input-name_type_error');
-  /*inputErrorClass.textContent = errorMessage;
-  inputErrorClass.classList.add("popup-profile__input-name-error_active");*/
+  //inputErrorClass.textContent = errorMessage;
+  errorClass.classList.add('popup-profile__error_active');
 };
-
 
 // Escribe el código de la segunda función, que oculta el elemento erróneo
 const hideError = (input) => {
   input.classList.remove('popup-profile__input-name_type_error');
-  /* inputNameError.classList.remove("popup-profile__input-name-error_active");
-    inputNameError.textContent = "";*/
+  errorClass.classList.remove('popup-profile__error_active');
+ // inputNameError.textContent = "";*
 };
 
 
 // Escribe el código de la tercera función, que comprueba si el campo es válido
 const checkInputValidity = () => {
-  if (!inputSelector.validity.valid) {
+  if (!formSelector.validity.valid){
     // Si NO lo es (!), muestra el elemento erróneo
     showError(inputSelector); /*, inputSelector.validationMessage);*/
   } else {
@@ -47,7 +46,7 @@ formSelector.addEventListener('submit', function (evt) {
   evt.preventDefault();
 });
 
-// Llama a la función isValid() para cada entrada de caracteres
+// Llama a la función chckInputValidity() para cada entrada de caracteres
 inputSelector.addEventListener('input', checkInputValidity()); /*function() {
    checkInputValidity();
 });*/

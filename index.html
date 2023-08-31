@@ -32,30 +32,30 @@
           <button type="button" class="button-place"></button>
         </section>
         <section class="popup-profile">
-          <form class="popup-profile__form" novalidate>
-            <button type="button" class="popup-profile__close"></button>
-            <h1 class="popup-profile__title">Editar perfil</h1>
+          <form class="profile-form" novalidate>
+            <button type="button" class="profile-form__close"></button>
+            <h1 class="profile-form__title">Editar perfil</h1>
             <input 
               id="text-input-name"
-              class="popup-profile__input-name"
+              class="profile-form__input-name"
               type="text"
               placeholder="Nombre"
-              minlength="2"
+              minlength="6"
               maxlength="40"
               required
             />
-            <span class="popup-profile__input-name-error text-input-name-error"></span>
+            <span class="text-input-name-error profile-form__error-name"> por favor, rellene este campo</span>
             <input
               id="text-input-about"
               type="text"
-              class="popup-profile__input-about"
+              class="profile-form__input-about"
               placeholder="Acerca de mi"
               minlength="2"
               maxlength="200"
               required
             />
-            <span class="text-input-about-error popup-add__input-about-error"></span>
-            <button type="submit" class="popup-profile__button">Guardar</button>
+            <span class="text-input-about-error profile-form__error-about"></span>
+            <button type="submit" class="profile-form__button">Guardar</button>
           </form>
         </section>
         <section class="popup-add">

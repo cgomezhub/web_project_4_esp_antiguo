@@ -1,4 +1,4 @@
-.popup-profile__input-name{
+.profile-form__input-name{
     font-family: "Inter400", Helvetica, sans-serif;
     font-size: 20px;
     line-height: 121%;
@@ -9,14 +9,18 @@
     border-bottom: solid 1px #c4c4c4;
 }
 
-/*
-.popup-profile__input-name:invalid {
+.profile-form__input-name_type_error{
+    border-bottom-color:  red;
+}
+
+
+.profile-form__input-name:invalid {
     border-bottom: 1px solid red;
 }
 
-.popup-profile__input-name:valid {
+.profile-form__input-name:valid {
     border-bottom: 1px solid green;
-}*/
+}
 
 
 
