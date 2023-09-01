@@ -9,18 +9,7 @@ enableValidation({
   inactiveButtonClass: "popup__button_disabled",
   inputErrorClass: "popup__input_type_error",
   errorClass: "popup__error_visible"
-}); 
-
-enableValidation({
-  formSelector: ".popup-profile__form",
-  inputSelector: ".popup-profile__input-name",
-
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup-profile__input-name_type_error",
-  errorClass: "popup__error_visible"
-}); 
-*/
+}); */
 
 // Selecciona todos los elementos del formulario necesarios y los asigna a las constantes
 
@@ -57,17 +46,49 @@ const checkInputValidity = (formSelector, inputSelector) => {
   }
 };
 
+// La función toma un array formado por campos
+
+const hasInvalidInput = (inputList) => {
+  // itera sobre el array utilizando el método some()
+  return inputList.some((inputSelector) => {
+        // Si el campo no es válido, el callback devolverá true.
+    // El método se detendrá entonces, y la función hasInvalidInput() devolverá true
+    // hasInvalidInput devuelve true
+
+    return !inputSelector.validity.valid;
+  })
+}; 
+
+// La función toma un array formado por los campos de entrada
+// y el elemento botón, que debe cambiar su estado
+
+const toggleButtonState = (inputList, submitButtonSelector) => {
+  // Si hay al menos una entrada que no es válida
+  if (hasInvalidInput(inputList)) {
+    // hace que el botón esté inactivo
+    submitButtonSelector.classList.add("profile-form__button_inactive");
+  } else {
+        // en caso contrario, lo hace activo
+    submitButtonSelector.classList.remove("profile-form__button_inactive");
+  }
+}; 
+
 const setEventListeners = (formSelector) => {
 // Encuentra todos los campos dentro del formulario y
   // crea un array a partir de estos, utilizando el método Array.from()
   const inputList = Array.from(formSelector.querySelectorAll(".profile-form__input"));
+  const submitButtonSelector = formSelector.querySelector(".profile-form__button");
+  // Llama a toggleButtonState() antes de empezar a detectar el evento de entrada
+  toggleButtonState(inputList, submitButtonSelector);
    // Itera sobre el array obtenido
    inputList.forEach((inputSelector) => {
     // agrega el controlador de eventos de entrada a cada campo
     inputSelector.addEventListener("input", () => {
       // Llama a la función isValid() dentro del callback
       // y pásale el formulario y el elemento a comprobar
-      checkInputValidity(formSelector, inputSelector)
+      checkInputValidity(formSelector, inputSelector);
+      // Llama a toggleButtonState() y pásale un array de campos y el botón
+      toggleButtonState(inputList, submitButtonSelector);
     });
   });
 }; 
@@ -90,5 +111,9 @@ const enableValidation = () => {
 
 // Llama a la función
 enableValidation();
+
+
+
+
 
   
