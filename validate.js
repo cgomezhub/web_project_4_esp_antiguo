@@ -1,6 +1,20 @@
-/* enableValidation({
+/* 
+// habilitar la validación llamando a enableValidation()
+// pasar todas las configuraciones en la llamada
+
+enableValidation({
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible"
+}); 
+
+enableValidation({
   formSelector: ".popup-profile__form",
   inputSelector: ".popup-profile__input-name",
+
   submitButtonSelector: ".popup__button",
   inactiveButtonClass: "popup__button_disabled",
   inputErrorClass: "popup-profile__input-name_type_error",
@@ -10,90 +24,71 @@
 
 // Selecciona todos los elementos del formulario necesarios y los asigna a las constantes
 
-const formSelector = document.querySelector('.popup-profile__form');
-const inputSelector = formSelector.querySelector('.popup-profile__input-name');
-const errorClass = formSelector.querySelector(`.${inputSelector.id}-error`);
+const formSelector = document.querySelector('.profile-form');
+const inputSelector = formSelector.querySelector('.profile-form__input');
+//const errorClass = formSelector.querySelector(`.${inputSelector.id}-error`);
 
 // Escribe el código de la primera función, que muestra el elemento erróneo
-const showError = (input)/*, errorMessage)*/ => {
-  input.classList.add('popup-profile__input-name_type_error');
-  //inputErrorClass.textContent = errorMessage;
-  errorClass.classList.add('popup-profile__error_active');
-};
-
-// Escribe el código de la segunda función, que oculta el elemento erróneo
-const hideError = (input) => {
-  input.classList.remove('popup-profile__input-name_type_error');
-  errorClass.classList.remove('popup-profile__error_active');
- // inputNameError.textContent = "";*
-};
-
-
-// Escribe el código de la tercera función, que comprueba si el campo es válido
-const checkInputValidity = () => {
-  if (!formSelector.validity.valid){
-    // Si NO lo es (!), muestra el elemento erróneo
-    showError(inputSelector); /*, inputSelector.validationMessage);*/
-  } else {
-    // Si es válido, oculta el elemento erróneo
-    hideError(inputSelector);
-  }
-};
-
-
-formSelector.addEventListener('submit', function (evt) {
-  // Cancela el comportamiento del navegador por defecto
-  evt.preventDefault();
-});
-
-// Llama a la función chckInputValidity() para cada entrada de caracteres
-inputSelector.addEventListener('input', checkInputValidity()); /*function() {
-   checkInputValidity();
-});*/
-
-//////
-
-/*
-
-const profileInputAbout = profileForm.querySelector(
-    '.popup-profile__input-about'
-);
-const inputAboutError = profileForm.querySelector(`.${profileInputAbout.id}-error`);
+const showError = (formSelector, inputSelector, errorMessage) => {
+  const errorClass = formSelector.querySelector(`.${inputSelector.id}-error`);
+  inputSelector.classList.add('profile-form__input_type_error');
+  errorClass.textContent = errorMessage;
+  errorClass.classList.add('profile-form__error_active');
   
-
-// escribe 1er function que oculta al elemento erroneo
-const showInputAboutError = (input) => {
-    input.classList.add('popup-profile__input-about_type_error');
-    inputAboutError.textContent = errorMesage;
-    inputAboutError.classList.add("popup-profile__input-about_type_error")
-
-
-  };
-// Escribe el código de la segunda función, que oculta el elemento erróneo
-const hideInputAboutError = (input) => {
-    input.classList.remove('popup-profile__input-about_type_error');
-    inputAboutError.classList.remove("popup-profile__input-about_type_error");
-    inputAboutError.textContent = "";
-
 };
+
+// Escribe el código de la segunda función, que oculta el elemento erróneo
+const hideError = (formSelector, inputSelector) => {
+  const errorClass = formSelector.querySelector(`.${inputSelector.id}-error`);
+  inputSelector.classList.remove('profile-form__input_type_error');
+  errorClass.classList.remove('profile-form__error_active');
+  errorClass.textContent = ""
+};
+
+
 // Escribe el código de la tercera función, que comprueba si el campo es válido
-const isValidAbout = () => {
-  if (!profileInputAbout.validity.valid) {
+const checkInputValidity = (formSelector, inputSelector) => {
+  if (!inputSelector.validity.valid) {
     // Si NO lo es (!), muestra el elemento erróneo
-    showInputAboutError(profileInputAbout, profileInputAbout.validationMessage);
+    showError(formSelector, inputSelector, inputSelector.validationMessage); /*, inputSelector.validationMessage);*/
   } else {
     // Si es válido, oculta el elemento erróneo
-    hideInputAboutError(profileInputAbout);
+    hideError(formSelector, inputSelector);
   }
 };
 
-profileForm.addEventListener('submit', function (evt) {
-  // Cancela el comportamiento del navegador por defecto
-  evt.preventDefault();
-});
+const setEventListeners = (formSelector) => {
+// Encuentra todos los campos dentro del formulario y
+  // crea un array a partir de estos, utilizando el método Array.from()
+  const inputList = Array.from(formSelector.querySelectorAll(".profile-form__input"));
+   // Itera sobre el array obtenido
+   inputList.forEach((inputSelector) => {
+    // agrega el controlador de eventos de entrada a cada campo
+    inputSelector.addEventListener("input", () => {
+      // Llama a la función isValid() dentro del callback
+      // y pásale el formulario y el elemento a comprobar
+      checkInputValidity(formSelector, inputSelector)
+    });
+  });
+}; 
 
-// Llama a la función isValid() para cada entrada de caracteres
-profileInputAbout.addEventListener('Inpu', function(){
-    isValidAbout();    
-});
-*/
+const enableValidation = () => {
+  // Encontrará todos los formularios con la clase especificada en el DOM y
+  // creará un array, a partir de estos, utilizando el método Array.from()
+  const formList = Array.from(document.querySelectorAll(".profile-form"));
+  // Itera sobre el array obtenido
+  formList.forEach((formSelector) => {
+    formSelector.addEventListener("submit", (evt) => {
+      // Cancela el comportamiento por defecto de cada formulario
+      evt.preventDefault();
+    });
+    // Llama a la función setEventListeners() para cada formulario
+    // tomando un elemento del formulario como argumento
+    setEventListeners(formSelector);
+  });
+};
+
+// Llama a la función
+enableValidation();
+
+  
