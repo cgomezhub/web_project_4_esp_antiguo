@@ -16,9 +16,17 @@ profileFormClose.addEventListener('click', () => {
   popupProfile.classList.remove('active');
 });
 
-/*popupProfile.addEventListener('click', () => {
-  popupProfile.classList.remove('active');
-});*/
+popupProfile.addEventListener('click', function (event) {
+  if (event.target === popupProfile) {
+    popupProfile.classList.remove('active');
+  }
+});
+
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    popupProfile.classList.remove('active');
+  }
+});
 
 const profileForm = document.getElementById('profile-form');
 
@@ -43,9 +51,16 @@ buttonPlace.addEventListener('click', () => {
 popupAddClose.addEventListener('click', () => {
   popupAdd.classList.remove('active');
 });
-/*popupAdd.addEventListener('click', () => {
-  popupAdd.classList.remove('active');
-});*/
+popupAdd.addEventListener('click', function (event) {
+  if (event.target === popupAdd) {
+    popupAdd.classList.remove('active');
+  }
+});
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Escape') {
+    popupAdd.classList.remove('active');
+  }
+});
 
 let imagesExpand = document.querySelector('.images-expand');
 let imagesExpandImage = document.querySelector('.images-expand__image');
@@ -139,6 +154,20 @@ elementos.forEach((elemento) => {
   imagesExpandClose.addEventListener('click', () => {
     imagesExpand.classList.remove('active');
   });
+
+  imagesExpand.addEventListener('click', function (event) {
+    if (event.target === imagesExpand) {
+      imagesExpand.classList.remove('active');
+    }
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      imagesExpand.classList.remove('active');
+    }
+  });
+
+
 });
 
 function like(boton) {
