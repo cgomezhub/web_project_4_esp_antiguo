@@ -166,8 +166,6 @@ elementos.forEach((elemento) => {
       imagesExpand.classList.remove('active');
     }
   });
-
-
 });
 
 function like(boton) {
