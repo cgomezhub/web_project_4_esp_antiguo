@@ -1,4 +1,4 @@
-.popup-add__input-https{
+.form__input{
     font-family: "Inter400", Helvetica, sans-serif;
     font-size: 20px;
     line-height: 121%;
@@ -9,14 +9,20 @@
     border-bottom: solid 1px #c4c4c4;
 }
 
+.form__input_type_error{
+    margin-bottom:0;
+    
+}
+
+
 @media screen and (min-width: 320px) and (max-width: 768px){
-    .popup-add__input-https{
+    .form__input{
         font-size: 40px;
     }
 }
 
 @media screen and (max-width: 320px){
-    .popup-add__input-https{
+    .form__input{
         font-size: 40px;
     }
 }

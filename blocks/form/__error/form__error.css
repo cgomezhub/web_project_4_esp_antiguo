@@ -1,9 +1,4 @@
-/*.profile-form__error{
-    visibility: visible;
-}
-*/
-
-.profile-form__error_active{
+.form__error_active{
     font-family: "Inter400", Helvetica, sans-serif;
     font-size: 18px;
     line-height: 121%;

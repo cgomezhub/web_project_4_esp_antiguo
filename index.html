@@ -31,50 +31,56 @@
           <button type="button" class="button-edit"></button>
           <button type="button" class="button-place"></button>
         </section>
-        <section class="popup-profile">
-          <form class="profile-form" novalidate>
-            <button type="button" class="profile-form__close"></button>
-            <h1 class="profile-form__title">Editar perfil</h1>
+        <section id="popup-profile" class="popup">
+          <form id="profile-form" class="form" novalidate>
+            <button type="button" class="form__close"></button>
+            <h1 class="form__title">Editar perfil</h1>
             <input 
               id="text-input-name"
-              class="profile-form__input"
+              class="form__input"
               type="text"
               placeholder="Nombre"
               minlength="2"
               maxlength="40"
               required
             />
-            <span class="text-input-name-error profile-form__error"></span>
+            <span class="text-input-name-error form__error"></span>
             <input
               id="text-input-about"
               type="text"
-              class="profile-form__input"
+              class="form__input"
               placeholder="Acerca de mi"
               minlength="2"
               maxlength="200"
               required
             />
-            <span class="text-input-about-error profile-form__error"></span>
-            <button type="submit" class="profile-form__button" required>Guardar</button>
+            <span class="text-input-about-error form__error"></span>
+            <button type="submit" class="form__button">Guardar</button>
           </form>
         </section>
-        <section class="popup-add">
-          <form class="popup-add__form">
-            <button type="button" class="popup-add__close"></button>
-            <h2 class="popup-add__title">Nuevo lugar</h2>
+        <section id="popup-add" class="popup">
+          <form id="add-form" class="form" novalidate>
+            <button id="add-form-close" type="button" class="form__close"></button>
+            <h2 class="form__title">Nuevo lugar</h2>
             <input
-              type="text"
-              class="popup-add__input-place"
+              id="text-input-place"
+              type="text"              
+              class="form__input"
               placeholder="Nombre del lugar"
               minlength="2"
-              maxlength="6"
+              maxlength="30"
+              required
             />
+            <span class="text-input-place-error form__error"></span>
             <input
               type="url"
-              class="popup-add__input-https"
-              placeholder="Enlace o link (https//... o http...)"
+              id="url-input-image"
+              class="form__input"
+              placeholder="Introduce URL (https://... o http://...)"
+              required
             />
-            <button type="submit" class="popup-add__button">Crear</button>
+            <span class="url-input-image-error form__error"></span>
+            <button type="submit" class="form__button">Crear</button>
           </form>
         </section>
         <section class="elements"></section>

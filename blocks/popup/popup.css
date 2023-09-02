@@ -1,21 +1,23 @@
-.popup-add{
-    width: 100%;
+.popup{
+    width: 87.5%;
     height: 100%;
     position: absolute;
     top: 0%;
-   /* padding-left: 15%;*/
     background-color: rgb(0, 0, 0, 0.6);
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
     z-index: 1;
+    margin-right: 0;
+    margin-top: -10%;
+    padding-left: 12.5%;
+    padding-top:10% ;
+
 }
-.popup-add.active{
-    visibility: visible;
-    opacity: 1;
+.popup.active{
+ visibility: visible;
+  opacity: 1;
 }
 
-.popup-add.inactive{
-    visibility: hidden;
-    opacity: 0;
-}
+
+

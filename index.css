@@ -13,13 +13,13 @@
 @import url(./blocks/profile/__about/profile__about.css);
 @import url(./blocks/button-edit/button-edit.css);
 @import url(./blocks/button-place/button-place.css);
-@import url(./blocks/popup-profile/popup-profile.css);
-@import url(./blocks/profile-form/profile-form.css);
-@import url(./blocks/profile-form/__close/profile-form__close.css);
-@import url(./blocks/profile-form/__title/profile-form__title.css);
-@import url(./blocks/profile-form/__input/profile-form__input.css);
-@import url(./blocks/profile-form/__error/profile-form__error.css);
-@import url(./blocks/profile-form/__button/profile-form__button.css);
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/form/form.css);
+@import url(./blocks/form/__close/form__close.css);
+@import url(./blocks/form/__title/form__title.css);
+@import url(./blocks/form/__input/form__input.css);
+@import url(./blocks/form/__error/form__error.css);
+@import url(./blocks/form/__button/form__button.css);
 @import url(./blocks/popup-add/popup-add.css);
 @import url(./blocks/popup-add/__form/popup-add__form.css);
 @import url(./blocks/popup-add/__close/popup-add__close.css);
@@ -40,4 +40,3 @@
 @import url(./blocks/images-expand/__close/images-expand__close.css);
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__copyright/footer__copyright.css);
-@import url(./blocks/text-input-name-error/text-input-name-error.css);

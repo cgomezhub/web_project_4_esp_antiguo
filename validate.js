@@ -13,24 +13,24 @@ enableValidation({
 
 // Selecciona todos los elementos del formulario necesarios y los asigna a las constantes
 
-const formSelector = document.querySelector('.profile-form');
-const inputSelector = formSelector.querySelector('.profile-form__input');
+const formSelector = document.querySelector('.form');
+const inputSelector = formSelector.querySelector('.form__input');
 //const errorClass = formSelector.querySelector(`.${inputSelector.id}-error`);
 
 // Escribe el código de la primera función, que muestra el elemento erróneo
 const showError = (formSelector, inputSelector, errorMessage) => {
   const errorClass = formSelector.querySelector(`.${inputSelector.id}-error`);
-  inputSelector.classList.add('profile-form__input_type_error');
+  inputSelector.classList.add('form__input_type_error');
   errorClass.textContent = errorMessage;
-  errorClass.classList.add('profile-form__error_active');
+  errorClass.classList.add('form__error_active');
   
 };
 
 // Escribe el código de la segunda función, que oculta el elemento erróneo
 const hideError = (formSelector, inputSelector) => {
   const errorClass = formSelector.querySelector(`.${inputSelector.id}-error`);
-  inputSelector.classList.remove('profile-form__input_type_error');
-  errorClass.classList.remove('profile-form__error_active');
+  inputSelector.classList.remove('form__input_type_error');
+  errorClass.classList.remove('form__error_active');
   errorClass.textContent = ""
 };
 
@@ -66,18 +66,18 @@ const toggleButtonState = (inputList, submitButtonSelector) => {
   // Si hay al menos una entrada que no es válida
   if (hasInvalidInput(inputList)) {
     // hace que el botón esté inactivo
-    submitButtonSelector.classList.add("profile-form__button_inactive");
+    submitButtonSelector.classList.add("form__button_inactive");
   } else {
         // en caso contrario, lo hace activo
-    submitButtonSelector.classList.remove("profile-form__button_inactive");
+    submitButtonSelector.classList.remove("form__button_inactive");
   }
 }; 
 
 const setEventListeners = (formSelector) => {
 // Encuentra todos los campos dentro del formulario y
   // crea un array a partir de estos, utilizando el método Array.from()
-  const inputList = Array.from(formSelector.querySelectorAll(".profile-form__input"));
-  const submitButtonSelector = formSelector.querySelector(".profile-form__button");
+  const inputList = Array.from(formSelector.querySelectorAll(".form__input"));
+  const submitButtonSelector = formSelector.querySelector(".form__button");
   // Llama a toggleButtonState() antes de empezar a detectar el evento de entrada
   toggleButtonState(inputList, submitButtonSelector);
    // Itera sobre el array obtenido
@@ -96,7 +96,7 @@ const setEventListeners = (formSelector) => {
 const enableValidation = () => {
   // Encontrará todos los formularios con la clase especificada en el DOM y
   // creará un array, a partir de estos, utilizando el método Array.from()
-  const formList = Array.from(document.querySelectorAll(".profile-form"));
+  const formList = Array.from(document.querySelectorAll(".form"));
   // Itera sobre el array obtenido
   formList.forEach((formSelector) => {
     formSelector.addEventListener("submit", (evt) => {

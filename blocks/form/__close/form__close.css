@@ -1,4 +1,4 @@
-.popup-add__close{
+.form__close{
     position: absolute;
     top: -5%;
     right: -5%;
@@ -11,7 +11,8 @@
     background-color: transparent;
     border:none;
     cursor: pointer;
+
 }
-.popup-add__close:hover{
+.form__close:hover{
     opacity: 70%;
 }

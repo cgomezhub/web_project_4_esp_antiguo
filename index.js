@@ -1,6 +1,6 @@
 const buttonEdit = document.querySelector('.button-edit');
-const popupProfile = document.querySelector('.popup-profile');
-const profileFormClose = document.querySelector('.profile-form__close');
+const popupProfile = document.getElementById('popup-profile');
+const profileFormClose = document.querySelector('.form__close');
 const profileFormInputName = document.getElementById('text-input-name');
 const profileFormInputAbout = document.getElementById('text-input-about');
 const profileName = document.querySelector('.profile__name');
@@ -8,6 +8,7 @@ const profileAbout = document.querySelector('.profile__about');
 
 buttonEdit.addEventListener('click', () => {
   popupProfile.classList.add('active');
+
   profileFormInputName.value = profileName.textContent;
   profileFormInputAbout.value = profileAbout.textContent;
 });
@@ -15,7 +16,11 @@ profileFormClose.addEventListener('click', () => {
   popupProfile.classList.remove('active');
 });
 
-const profileForm = document.querySelector('.profile-form');
+/*popupProfile.addEventListener('click', () => {
+  popupProfile.classList.remove('active');
+});*/
+
+const profileForm = document.getElementById('profile-form');
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -27,10 +32,10 @@ function handleProfileFormSubmit(evt) {
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 
 const buttonPlace = document.querySelector('.button-place');
-const popupAdd = document.querySelector('.popup-add');
-const popupAddClose = document.querySelector('.popup-add__close');
-const popupAddInputPlace = document.querySelector('.popup-add__input-place');
-const popupAddInputHttps = document.querySelector('.popup-add__input-https');
+const popupAdd = document.getElementById('popup-add');
+const popupAddClose = document.getElementById('add-form-close');
+const popupAddInputPlace = document.getElementById('text-input-place');
+const popupAddInputHttps = document.getElementById('url-input-image');
 
 buttonPlace.addEventListener('click', () => {
   popupAdd.classList.add('active');
@@ -38,7 +43,9 @@ buttonPlace.addEventListener('click', () => {
 popupAddClose.addEventListener('click', () => {
   popupAdd.classList.remove('active');
 });
-
+/*popupAdd.addEventListener('click', () => {
+  popupAdd.classList.remove('active');
+});*/
 
 let imagesExpand = document.querySelector('.images-expand');
 let imagesExpandImage = document.querySelector('.images-expand__image');
@@ -147,7 +154,7 @@ heartImage.forEach((boton) => {
   boton.addEventListener('click', () => like(boton));
 });
 
-const popupAddForm = document.querySelector('.popup-add__form');
+const popupAddForm = document.getElementById('add-form');
 
 function handleLugarFormSubmit(evt) {
   evt.preventDefault();
