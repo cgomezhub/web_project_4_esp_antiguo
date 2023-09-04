@@ -8,6 +8,8 @@ margin: 5% 0;
     .profile{
         font-size: 22px;
         margin: 5% 1% 5% 0;
+        grid-template-columns: 17% 55% 10% 18%;
+        grid-template-rows: 100%;
     }
 }
 

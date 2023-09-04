@@ -17,9 +17,4 @@
 }
 
 
-@media screen and (max-width: 320px){
-    .imagenes-expand.active{
-        /*visibility: hidden;*/
-        display: none;
-    }
-}
+

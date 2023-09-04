@@ -7,3 +7,16 @@
     margin: 0 auto;
     border: none;
 }
+
+
+@media screen and (min-width: 320px) and (max-width: 768px){
+    .form__error_active{
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .form__error_active{
+        font-size: 11px;
+    }
+}

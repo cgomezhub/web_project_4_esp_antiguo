@@ -15,3 +15,21 @@
 .button-place:hover{
     opacity: 50%;
 }
+
+@media screen and (min-width: 320px) and (max-width:768px){
+    .button-place{
+        width: 70%;
+        height: 45%;
+        margin: 10% auto;
+        
+    }
+}
+
+@media screen and (max-width: 320px){
+    .button-place{
+        width: 65%;
+        height: 25%;
+        margin: 5% 0 auto auto;
+        
+    }
+}

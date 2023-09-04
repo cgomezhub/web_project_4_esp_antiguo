@@ -2,3 +2,14 @@
     width: 1280px;
     margin: 0 auto;
 }
+
+@media screen and (min-width: 320px) and (max-width: 768px){
+    .page{
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .page{
+       width: 95%;
+}

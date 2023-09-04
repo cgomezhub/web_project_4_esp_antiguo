@@ -19,10 +19,7 @@
 
 @media screen and (min-width: 320px) and (max-width: 768px){
     .images-expand__close{
-        right: -53%;
-        width: 10%;
-        height: 10%;
-        top: -9%;
+        top: -15%;
 
     }
 }
