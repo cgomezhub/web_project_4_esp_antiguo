@@ -21,6 +21,7 @@ const hideError = (formSelector, inputSelector) => {
 
 // Escribe el código de la tercera función, que comprueba si el campo es válido
 const checkInputValidity = (formSelector, inputSelector) => {
+  /*console.log('checkInputValidity', formSelector, inputSelector);*/
   if (!inputSelector.validity.valid) {
     // Si NO lo es (!), muestra el elemento erróneo
     showError(
