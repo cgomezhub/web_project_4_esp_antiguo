@@ -193,19 +193,22 @@ elementos.forEach((elemento) => {
     imagesExpandTitle.textContent = elemento.nombre;
   });
 
-  imagesExpandClose.addEventListener('click', () => {
-    imagesExpand.classList.remove('active');
-  });
+  function removeExpand(){
+    imagesExpand.classList.remove('active')
+  }
+  ;
+
+  imagesExpandClose.addEventListener('click', removeExpand);
 
   imagesExpand.addEventListener('click', function (event) {
     if (event.target === imagesExpand) {
-      imagesExpand.classList.remove('active');
+      removeExpand();
     }
   });
 
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
-      imagesExpand.classList.remove('active');
+      removeExpand();
     }
   });
 });
