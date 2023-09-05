@@ -13,9 +13,10 @@
     opacity: 80%;
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 768px){
     .element__image{
         pointer-events:none;
+        width: 100%;
     }
 }
     

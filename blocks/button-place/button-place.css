@@ -16,20 +16,17 @@
     opacity: 50%;
 }
 
-@media screen and (min-width: 320px) and (max-width:768px){
+@media screen and (min-width: 768px) and (max-width: 1280px){
     .button-place{
-        width: 70%;
-        height: 45%;
-        margin: 10% auto;
+        
+       margin: 10% auto;
         
     }
 }
 
-@media screen and (max-width: 320px){
+@media screen and (max-width: 768px){
     .button-place{
-        width: 65%;
-        height: 25%;
-        margin: 5% 0 auto auto;
+       margin: 10% auto;
         
     }
 }

@@ -21,14 +21,11 @@ const hideError = (formSelector, inputSelector) => {
 
 // Escribe el código de la tercera función, que comprueba si el campo es válido
 const checkInputValidity = (formSelector, inputSelector) => {
-  /*console.log('checkInputValidity', formSelector, inputSelector);*/
   if (!inputSelector.validity.valid) {
     // Si NO lo es (!), muestra el elemento erróneo
-    showError(
-      formSelector,
-      inputSelector,
-      inputSelector.validationMessage
-    ); /*, inputSelector.validationMessage);*/
+    showError(formSelector, inputSelector, inputSelector.validationMessage);
+
+    /*, inputSelector.validationMessage);*/
   } else {
     // Si es válido, oculta el elemento erróneo
     hideError(formSelector, inputSelector);
@@ -47,6 +44,8 @@ const hasInvalidInput = (inputList) => {
     return !inputSelector.validity.valid;
   });
 };
+
+
 
 // La función toma un array formado por los campos de entrada
 // y el elemento botón, que debe cambiar su estado
@@ -92,11 +91,17 @@ const enableValidation = () => {
       // Cancela el comportamiento por defecto de cada formulario
       evt.preventDefault();
     });
-    // Llama a la función setEventListeners() para cada formulario
+  // Cancela el comportamiento de Enter por defecto
+    formSelector.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+      }
+    });
+        // Llama a la función setEventListeners() para cada formulario
     // tomando un elemento del formulario como argumento
     setEventListeners(formSelector);
   });
 };
 
-// Llama a la función
+
 enableValidation();
