@@ -6,22 +6,19 @@ const profileFormInputAbout = document.getElementById('text-input-about');
 const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__about');
 
-
-function openProfilePopup(){
+function openProfilePopup() {
   popupProfile.classList.add('active');
   profileFormInputName.value = profileName.textContent;
-  profileFormInputAbout.value = profileAbout.textContent
+  profileFormInputAbout.value = profileAbout.textContent;
 }
 
-function closeProfilePopup(){
+function closeProfilePopup() {
   popupProfile.classList.remove('active');
-  buttonEdit.removeEventListener('click', openProfilePopup);
 }
 
-buttonEdit.addEventListener('click', openProfilePopup); 
+buttonEdit.addEventListener('click', openProfilePopup);
 
 profileFormClose.addEventListener('click', closeProfilePopup);
-
 
 popupProfile.addEventListener('click', function (event) {
   if (event.target === popupProfile) {
@@ -32,9 +29,9 @@ popupProfile.addEventListener('click', function (event) {
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
     closeProfilePopup();
+    buttonEdit.removeEventListener('click', openProfilePopup);
   }
 });
-
 
 const profileForm = document.getElementById('profile-form');
 
@@ -53,20 +50,17 @@ const popupAddClose = document.getElementById('add-form-close');
 const popupAddInputPlace = document.getElementById('text-input-place');
 const popupAddInputHttps = document.getElementById('url-input-image');
 
-
-function openAddPopup(){
+function openAddPopup() {
   popupAdd.classList.add('active');
 }
 
-function closeAddPopup(){
+function closeAddPopup() {
   popupAdd.classList.remove('active');
-  buttonPlace.removeEventListener('click', openAddPopup);
 }
 
-buttonPlace.addEventListener('click', openAddPopup); 
+buttonPlace.addEventListener('click', openAddPopup);
 
 popupAddClose.addEventListener('click', closeAddPopup);
-
 
 popupAdd.addEventListener('click', function (event) {
   if (event.target === popupAdd) {
@@ -77,9 +71,9 @@ popupAdd.addEventListener('click', function (event) {
 document.addEventListener('keydown', function (event) {
   if (event.key === 'Escape') {
     closeAddPopup();
+    buttonPlace.removeEventListener('click', openAddPopup);
   }
 });
-
 
 const imagesExpand = document.querySelector('.images-expand');
 const imagesExpandImage = document.querySelector('.images-expand__image');
@@ -91,64 +85,63 @@ const elementos = [
   {
     imagen:
       'https://images.unsplash.com/photo-1666831268439-376e34c4de0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80',
-    altImagen : "imagen de la Montana de Yosemite",
+    altImagen: 'imagen de la Montana de Yosemite',
     nombre: 'Montana de Yosemite',
     corazon: './images/heart.svg',
     altCorazon: 'corazon de me gusta',
     eliminar: './images/Trash.svg',
-    altCesta: 'cesta  de eliminar'
-
+    altCesta: 'cesta  de eliminar',
   },
   {
     imagen:
       'https://images.unsplash.com/photo-1618595723314-c54d51d6e043?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1220&q=80',
-    altImagen : "imagen de Los Arcos",
+    altImagen: 'imagen de Los Arcos',
     nombre: 'Los Arcos',
     corazon: './images/heart.svg',
     altCorazon: 'corazon de me gusta',
     eliminar: './images/Trash.svg',
-    altCesta: 'cesta  de eliminar'
+    altCesta: 'cesta  de eliminar',
   },
   {
     imagen:
       'https://images.unsplash.com/photo-1657589809154-8212431ee6c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-    altImagen : "imagen del Canon Bryce",
+    altImagen: 'imagen del Canon Bryce',
     nombre: 'Canon Bryce',
     corazon: './images/heart.svg',
     altCorazon: 'corazon de me gusta',
     eliminar: './images/Trash.svg',
-    altCesta: 'cesta  de eliminar'
+    altCesta: 'cesta  de eliminar',
   },
   {
     imagen:
       'https://images.unsplash.com/photo-1615405147358-f17791e21fcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
-    altImagen : "imagen del parque nacional Zion",
+    altImagen: 'imagen del parque nacional Zion',
     nombre: 'Parque Nacional Zion',
     corazon: './images/heart.svg',
     altCorazon: 'corazon de me gusta',
     eliminar: './images/Trash.svg',
-    altCesta: 'cesta  de eliminar'
+    altCesta: 'cesta  de eliminar',
   },
   {
     imagen:
       'https://images.unsplash.com/photo-1678806922638-27bf485490ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1031&q=80',
-    altImagen : "imagen del parque nacional Denali",
+    altImagen: 'imagen del parque nacional Denali',
     nombre: 'Parque Nacional Denali',
     corazon: './images/heart.svg',
     altCorazon: 'corazon de me gusta',
     eliminar: './images/Trash.svg',
-    altCesta: 'cesta  de eliminar'
+    altCesta: 'cesta  de eliminar',
   },
 
   {
     imagen:
       'https://images.unsplash.com/photo-1643252494989-81cd0b5bead2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80',
-    altImagen : "imagen del gran canon",
+    altImagen: 'imagen del gran canon',
     nombre: 'Gran Canon',
-    corazon: './images/heart.svg' ,
-    altCorazon: "corazon de me gusta",
+    corazon: './images/heart.svg',
+    altCorazon: 'corazon de me gusta',
     eliminar: './images/Trash.svg',
-    altCesta: 'cesta  de eliminar'
+    altCesta: 'cesta  de eliminar',
   },
 ];
 
@@ -193,11 +186,9 @@ elementos.forEach((elemento) => {
     imagesExpandTitle.textContent = elemento.nombre;
   });
 
-  function removeExpand(){
-    imagesExpand.classList.remove('active')
+  function removeExpand() {
+    imagesExpand.classList.remove('active');
   }
-  ;
-
   imagesExpandClose.addEventListener('click', removeExpand);
 
   imagesExpand.addEventListener('click', function (event) {
@@ -216,10 +207,10 @@ elementos.forEach((elemento) => {
 function like(boton) {
   if (boton.src.includes('images/heart.svg')) {
     boton.src = 'images/Black-heart.png';
-    boton.alt = "corazon de me gusta activo";
+    boton.alt = 'corazon de me gusta activo';
   } else {
     boton.src = 'images/heart.svg';
-    boton.alt = "corazon de me gusta inactivo";
+    boton.alt = 'corazon de me gusta inactivo';
   }
 }
 
@@ -241,7 +232,7 @@ function handleLugarFormSubmit(evt) {
 
   elementTitle.textContent = popupAddInputPlace.value;
   elementImage.src = popupAddInputHttps.value;
-  elementImage.alt = `imagen de ${popupAddInputPlace.value}`
+  elementImage.alt = `imagen de ${popupAddInputPlace.value}`;
 
   elementHeart.addEventListener('click', () => like(elementHeart));
 
@@ -253,7 +244,7 @@ function handleLugarFormSubmit(evt) {
     imagesExpand.classList.add('active');
     imagesExpandImage.src = popupAddInputHttps.value;
     imagesExpandTitle.textContent = popupAddInputPlace.value;
-    imagesExpandImage.alt = `imagen de ${popupAddInputPlace.value}`
+    imagesExpandImage.alt = `imagen de ${popupAddInputPlace.value}`;
   });
 
   imagesExpandClose.addEventListener('click', () => {

@@ -45,8 +45,6 @@ const hasInvalidInput = (inputList) => {
   });
 };
 
-
-
 // La función toma un array formado por los campos de entrada
 // y el elemento botón, que debe cambiar su estado
 
@@ -91,17 +89,16 @@ const enableValidation = () => {
       // Cancela el comportamiento por defecto de cada formulario
       evt.preventDefault();
     });
-  // Cancela el comportamiento de Enter por defecto
-    formSelector.addEventListener('keydown', (event) => {
+    // Cancela el comportamiento de Enter por defecto
+    document.addEventListener('keydown', (event) => {
       if (event.key === 'Enter') {
         event.preventDefault();
       }
     });
-        // Llama a la función setEventListeners() para cada formulario
+    // Llama a la función setEventListeners() para cada formulario
     // tomando un elemento del formulario como argumento
     setEventListeners(formSelector);
   });
 };
-
 
 enableValidation();
