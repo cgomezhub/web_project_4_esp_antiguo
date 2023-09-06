@@ -24,6 +24,7 @@ const checkInputValidity = (formSelector, inputSelector) => {
   if (!inputSelector.validity.valid) {
     // Si NO lo es (!), muestra el elemento erróneo
     showError(formSelector, inputSelector, inputSelector.validationMessage);
+    
 
     /*, inputSelector.validationMessage);*/
   } else {
@@ -45,6 +46,7 @@ const hasInvalidInput = (inputList) => {
   });
 };
 
+
 // La función toma un array formado por los campos de entrada
 // y el elemento botón, que debe cambiar su estado
 
@@ -53,9 +55,17 @@ const toggleButtonState = (inputList, submitButtonSelector) => {
   if (hasInvalidInput(inputList)) {
     // hace que el botón esté inactivo
     submitButtonSelector.classList.add('form__button_inactive');
+    formSelector.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+      }
+    }); 
+
   } else {
     // en caso contrario, lo hace activo
     submitButtonSelector.classList.remove('form__button_inactive');
+    
+    
   }
 };
 
@@ -89,15 +99,11 @@ const enableValidation = () => {
       // Cancela el comportamiento por defecto de cada formulario
       evt.preventDefault();
     });
-    // Cancela el comportamiento de Enter por defecto
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter') {
-        event.preventDefault();
-      }
-    });
+  
     // Llama a la función setEventListeners() para cada formulario
     // tomando un elemento del formulario como argumento
     setEventListeners(formSelector);
+    
   });
 };
 
